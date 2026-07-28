@@ -3,10 +3,9 @@ id: replace-with-workflow-id
 title: Replace with workflow title
 domains:
   - technology-risk
-status: observed
 first_observed: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
-independent_employers: 1
+independent_employers: 3
 challenge_status: none
 ---
 
@@ -18,18 +17,21 @@ One or two sentences describing the bounded work action and why it exists.
 
 ## Observed work task
 
-State the action in operational terms.
+State the action in operational terms. Separate source wording from the normalized task.
 
-## Required output
+## Required outputs
 
-List the observable deliverables or records expected from the work.
+Label each output as `explicit` or `inferred`.
 
-- Output one
-- Output two
+| Output | Basis | Reasoning |
+| --- | --- | --- |
+| Output one | explicit / inferred | Why this classification is justified |
 
-## Human boundary
+## Human and authorization boundary
 
-State the judgment, approval, risk acceptance, regulatory interpretation, or sign-off that remains with an authorized person or role.
+State the judgment, authorization, approval, risk acceptance, regulatory interpretation, or sign-off that remains with an authorized person or role.
+
+When authority is not established by public evidence, state that uncertainty instead of inventing an owner.
 
 ## Typical inputs
 
@@ -47,7 +49,7 @@ State the judgment, approval, risk acceptance, regulatory interpretation, or sig
 - Evidence metadata handling
 - Relevant platform, scripting, query, or reporting capability
 
-Only include capabilities derived from the workflow.
+Only include capabilities derived from the workflow. Distinguish technologies explicitly requested by employers from capabilities inferred as implementation options.
 
 ## Automation boundary
 
@@ -59,29 +61,39 @@ Only include capabilities derived from the workflow.
 - Completeness or freshness checks
 - Exception reporting
 
-### Not delegated by this workflow
+### Requires separate authority or control
 
-- Approval
-- Risk acceptance
+- Approval or risk acceptance
 - Remediation execution
 - Regulatory or legal determination
 - Production-state change
+- Any action whose accountable owner is unresolved
 
-Adjust these lists to the actual workflow.
+These actions are not declared universally non-automatable. Technical execution does not itself create authority or accountability.
 
-## Evidence
+## Employer evidence
 
-| Source | Observed date | Minimal supporting signal | Independence note |
+At least three independent employers must be represented.
+
+| Employer | Source | Observed date | Minimal supporting signal | Independence note |
+| --- | --- | --- | --- | --- |
+| Employer name | Public source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Parent-group, mirror, or related-entity note |
+
+## Contextual evidence
+
+Use this section for practitioner material, standards, regulators, official product documentation, incidents, or implementation retrospectives.
+
+| Source | Observed date | Context supplied | Limitation |
 | --- | --- | --- | --- |
-| Public source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Original employer, official source, or other classification |
+| Public contextual source URL | YYYY-MM-DD | Constraint, failure mode, terminology, or capability | Why it does not independently establish employer recurrence |
 
-## Evidence limitations
+## Evidence limitations and alternatives
 
-Explain what the sources do not establish. Include plausible alternative interpretations where relevant.
+Explain what the sources do not establish. Include plausible alternatives such as copied job language, a temporary programme, bundled responsibilities, regulatory timing, or vendor-specific staffing.
 
 ## Practice challenge
 
-- **Status:** none / proposed / challenge-ready / pilot-tested
+- **Status:** none / proposed / challenge-ready / pilot-tested / validated-pattern
 - **Scenario:** synthetic
 - **Link:** add when available
 
@@ -96,13 +108,14 @@ Explain what the sources do not establish. Include plausible alternative interpr
 ### Evaluation dimensions
 
 - Material issue detection
-- Evidence reasoning
+- Evidence reasoning and traceability
 - False-positive control
 - Handling of uncertainty
-- Respect for human boundary
+- Respect for authorization and accountability boundaries
+- Verification of AI-assisted output, where applicable
 
 ## Revision history
 
 | Date | Change | Reason |
 | --- | --- | --- |
-| YYYY-MM-DD | Initial entry | Initial qualifying observation |
+| YYYY-MM-DD | Initial publication | Publication criteria satisfied |

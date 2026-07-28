@@ -11,10 +11,10 @@ This repository organizes recurring work observed in GRC, technology risk, IT au
 Each workflow is described through a common structure:
 
 - **Observed work task** — the action an employer expects someone to perform.
-- **Required output** — the deliverable, record, analysis, or evidence package expected from that work.
-- **Human boundary** — the judgment, approval, risk acceptance, or sign-off that remains accountable to a person or authorized role.
-- **Technical capabilities** — the practical skills that support the work.
-- **Automation boundary** — what may be collected, compared, validated, or reported automatically, and what should not be delegated.
+- **Required output** — an explicitly requested or cautiously inferred deliverable, record, analysis, or evidence package.
+- **Human boundary** — the judgment, authorization, risk acceptance, or sign-off that remains accountable to a person or authorized role.
+- **Technical capabilities** — practical capabilities derived from the work rather than added because they are generally popular.
+- **Automation boundary** — what may be collected, compared, validated, or reported automatically, and where authorization and accountability remain external to the automation.
 - **Practice challenge** — an optional synthetic exercise for learning or assessment.
 
 ## What this repository is not
@@ -30,16 +30,29 @@ This is not:
 
 ## Evidence maturity
 
+Evidence maturity describes the strength of the public demand pattern. It does not describe challenge quality.
+
 | Status | Meaning |
 | --- | --- |
-| `observed` | The work task has been observed in at least one public source. |
-| `repeated` | Similar work has been observed across at least two independent employers or sources. |
-| `candidate` | The task, required output, and human boundary recur with enough stability to justify a reusable workflow entry. |
-| `challenge-ready` | A bounded synthetic scenario, input set, deliverables, and evaluation dimensions have been designed. |
-| `pilot-tested` | At least one external participant has completed the exercise and supplied feedback. |
-| `validated-pattern` | The workflow and evaluation model have been revised through repeated use and feedback. |
+| `observed` | The work task has been observed in at least one qualifying public demand source. |
+| `repeated` | Substantially similar work has been observed in at least two independent employer demand sources. |
+| `candidate` | The task recurs across at least three independent employer demand sources and the task, output, and human boundary are sufficiently stable to justify a reusable workflow entry. |
 
-Status measures evidence and design maturity. It is not a quality score for an employer, product, profession, or control environment.
+Practitioner discussions, standards, regulatory material, and product documentation may clarify context, failure modes, or constraints. They do not substitute for independent employer demand sources when advancing demand maturity.
+
+## Challenge maturity
+
+Challenge maturity describes the state of the synthetic exercise, not the strength of market evidence.
+
+| Status | Meaning |
+| --- | --- |
+| `none` | No exercise has been proposed. |
+| `proposed` | A bounded exercise concept exists, but inputs or evaluation criteria remain incomplete. |
+| `challenge-ready` | A synthetic scenario, input set, required deliverables, and evaluation dimensions have been designed. |
+| `pilot-tested` | At least one external participant has completed the exercise and supplied feedback. |
+| `validated-pattern` | Repeated use and feedback have materially revised and stabilized the exercise and evaluation model. |
+
+Neither status is a quality score for an employer, product, profession, or control environment.
 
 ## Workflow domains
 
@@ -76,12 +89,13 @@ The initial scope includes:
 A workflow entry should:
 
 1. describe a concrete work action rather than a broad job title;
-2. identify at least one observable output;
-3. state where accountable human judgment remains necessary;
+2. distinguish explicitly observed outputs from outputs inferred during normalization;
+3. state where accountable human judgment or authorization remains necessary;
 4. distinguish observed demand from inferred automation opportunity;
-5. link to public evidence where licensing and source stability permit;
-6. label all invented organizations, records, policies, and datasets as synthetic;
-7. avoid reproducing confidential or personal information.
+5. identify independent employer demand sources separately from contextual sources;
+6. link to public evidence where licensing and source stability permit;
+7. label all invented organizations, records, policies, and datasets as synthetic;
+8. avoid reproducing confidential, personal, or production information.
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the evidence model and [CONTRIBUTING.md](CONTRIBUTING.md) for submission rules.
 
@@ -104,4 +118,4 @@ These are backlog candidates, not yet validated entries.
 
 ## License
 
-Unless a file states otherwise, original repository content is licensed under the [Creative Commons Attribution 4.0 International License](LICENSE). Third-party source material remains subject to its original rights and is not relicensed by this repository.
+Unless a file states otherwise, original repository content is licensed under the Creative Commons Attribution 4.0 International Public License. Third-party source material remains subject to its original rights and is not relicensed by this repository.

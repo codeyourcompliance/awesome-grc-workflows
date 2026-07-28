@@ -2,19 +2,19 @@
 
 Evidence-backed work tasks, required outputs, human boundaries, technical capabilities, and practice challenges across GRC, technology risk, audit, resilience, and compliance roles.
 
-> Status: early public index. Entries describe observed work demand and synthetic practice opportunities. They do not prove a control failure, compliance gap, software buying intent, market size, or full automability.
+> Status: early public curated index. Published entries describe recurring, publicly observable work. They do not prove a control failure, compliance gap, software buying intent, market size, or full automability.
 
 ## What this repository is
 
-This repository organizes recurring work observed in GRC, technology risk, IT audit, operational resilience, third-party risk, cybersecurity governance, and compliance roles.
+This repository organizes recurring work observed across GRC, technology risk, IT audit, operational resilience, third-party risk, cybersecurity governance, and compliance roles.
 
-Each workflow is described through a common structure:
+Each published workflow uses a common structure:
 
-- **Observed work task** — the action an employer expects someone to perform.
-- **Required output** — the deliverable, record, analysis, or evidence package expected from that work.
-- **Human boundary** — the judgment, approval, risk acceptance, or sign-off that remains accountable to a person or authorized role.
-- **Technical capabilities** — the practical skills that support the work.
-- **Automation boundary** — what may be collected, compared, validated, or reported automatically, and what should not be delegated.
+- **Observed work task** — the action employers expect someone to perform.
+- **Required output** — an explicitly requested or cautiously inferred deliverable, record, analysis, or evidence package.
+- **Human boundary** — the judgment, authorization, risk acceptance, or sign-off that remains accountable to a person or authorized role.
+- **Technical capabilities** — practical capabilities derived from the work rather than added because they are generally popular.
+- **Automation boundary** — what may be collected, compared, validated, or reported automatically, and where authorization and accountability remain external to the automation.
 - **Practice challenge** — an optional synthetic exercise for learning or assessment.
 
 ## What this repository is not
@@ -22,24 +22,41 @@ Each workflow is described through a common structure:
 This is not:
 
 - a general directory of GRC products, certifications, books, or regulations;
+- a collection of every job posting or preliminary observation;
 - a claim that every listed workflow should be automated;
 - evidence that an employer has a control deficiency;
 - evidence of software budget or purchasing intent;
 - a substitute for legal, regulatory, audit, or risk advice;
 - a collection of confidential employer procedures or production data.
 
-## Evidence maturity
+## Publication criteria
+
+A workflow is published only when:
+
+1. substantially similar work is supported by at least three independent employers;
+2. the normalized task is narrow enough to describe operationally;
+3. required outputs are either explicitly supported or clearly marked as inferred;
+4. human authorization and accountability boundaries are stated or marked unresolved;
+5. alternative explanations have been considered;
+6. all supporting evidence is public and independently inspectable.
+
+Independence is counted at employer level, not by number of links or postings. Multiple roles, reposts, job-board mirrors, locations, or business units from one employer count as one employer. Entities under the same ultimate corporate parent are conservatively counted as one employer unless independence is documented.
+
+Practitioner discussions, standards, regulatory material, incident reports, and product documentation may clarify context, failure modes, terminology, or implementation options. They do not substitute for independent employer evidence when deciding whether a workflow qualifies for publication.
+
+## Challenge maturity
+
+Challenge maturity describes the state of the synthetic exercise, not the strength of the workflow evidence.
 
 | Status | Meaning |
 | --- | --- |
-| `observed` | The work task has been observed in at least one public source. |
-| `repeated` | Similar work has been observed across at least two independent employers or sources. |
-| `candidate` | The task, required output, and human boundary recur with enough stability to justify a reusable workflow entry. |
-| `challenge-ready` | A bounded synthetic scenario, input set, deliverables, and evaluation dimensions have been designed. |
+| `none` | No exercise has been proposed. |
+| `proposed` | A bounded exercise concept exists, but inputs or evaluation criteria remain incomplete. |
+| `challenge-ready` | A synthetic scenario, input set, required deliverables, and evaluation dimensions have been designed. |
 | `pilot-tested` | At least one external participant has completed the exercise and supplied feedback. |
-| `validated-pattern` | The workflow and evaluation model have been revised through repeated use and feedback. |
+| `validated-pattern` | Repeated use and feedback have materially revised and stabilized the exercise and evaluation model. |
 
-Status measures evidence and design maturity. It is not a quality score for an employer, product, profession, or control environment.
+A published workflow may have no challenge. A polished challenge does not strengthen the underlying workflow evidence.
 
 ## Workflow domains
 
@@ -73,35 +90,20 @@ The initial scope includes:
 
 ## Entry requirements
 
-A workflow entry should:
+A published workflow entry must:
 
 1. describe a concrete work action rather than a broad job title;
-2. identify at least one observable output;
-3. state where accountable human judgment remains necessary;
-4. distinguish observed demand from inferred automation opportunity;
-5. link to public evidence where licensing and source stability permit;
-6. label all invented organizations, records, policies, and datasets as synthetic;
-7. avoid reproducing confidential or personal information.
+2. be supported by at least three independent employers;
+3. distinguish explicitly observed outputs from outputs inferred during normalization;
+4. state where accountable human judgment or authorization remains necessary, or mark the authority as unresolved;
+5. distinguish employer evidence from inferred automation opportunity;
+6. identify employer evidence separately from contextual evidence;
+7. link to public evidence where licensing and source stability permit;
+8. label all invented organizations, records, policies, systems, errors, and datasets as synthetic;
+9. avoid reproducing confidential, personal, or production information.
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the evidence model and [CONTRIBUTING.md](CONTRIBUTING.md) for submission rules.
 
-## Planned first workflows
-
-The first candidate set is expected to cover:
-
-- privileged access recertification;
-- leaver and orphan-account reconciliation;
-- evidence freshness assessment;
-- remediation evidence validation;
-- technology-risk finding closure;
-- control testing and evidence packaging;
-- firewall-rule recertification;
-- DR exercise evidence review;
-- post-incident evidence sufficiency review;
-- third-party technology-risk assessment.
-
-These are backlog candidates, not yet validated entries.
-
 ## License
 
-Unless a file states otherwise, original repository content is licensed under the [Creative Commons Attribution 4.0 International License](LICENSE). Third-party source material remains subject to its original rights and is not relicensed by this repository.
+Unless a file states otherwise, original repository content is licensed under the [Creative Commons Attribution 4.0 International Public License](LICENSE). Third-party source material remains subject to its original rights and is not relicensed by this repository.

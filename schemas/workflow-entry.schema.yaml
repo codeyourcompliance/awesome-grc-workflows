@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/codeyourcompliance/awesome-grc-workflows/schemas/workflow-entry.schema.yaml"
-title: Awesome GRC Workflow Entry
+title: Awesome GRC Workflow Entry Frontmatter
 
 type: object
 additionalProperties: false
@@ -8,10 +8,11 @@ required:
   - id
   - title
   - domains
-  - status
+  - demand_status
   - first_observed
   - last_reviewed
-  - independent_employers
+  - independent_demand_sources
+  - contextual_sources
   - challenge_status
 properties:
   id:
@@ -39,22 +40,22 @@ properties:
         - remediation-validation
         - technology-risk
         - third-party-risk
-  status:
+  demand_status:
     type: string
     enum:
       - observed
       - repeated
       - candidate
-      - challenge-ready
-      - pilot-tested
-      - validated-pattern
   first_observed:
     type: string
     format: date
   last_reviewed:
     type: string
     format: date
-  independent_employers:
+  independent_demand_sources:
+    type: integer
+    minimum: 1
+  contextual_sources:
     type: integer
     minimum: 0
   challenge_status:
@@ -64,4 +65,4 @@ properties:
       - proposed
       - challenge-ready
       - pilot-tested
-      - published
+      - validated-pattern

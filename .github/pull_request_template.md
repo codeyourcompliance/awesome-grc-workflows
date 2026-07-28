@@ -40,7 +40,6 @@ Describe the workflow, evidence, correction, or challenge-design change.
 ## Validation
 
 - [ ] `independent_employers` is at least 3 and matches the evidence table.
-- [ ] `qualifying_sources`, when present, matches the supporting links.
 - [ ] Required outputs are stated and classified by basis.
 - [ ] Human authorization and accountability boundaries are explicit or marked unresolved.
 - [ ] Synthetic material is clearly labelled.

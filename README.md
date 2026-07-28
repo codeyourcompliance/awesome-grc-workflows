@@ -22,7 +22,7 @@ Each published workflow uses a common structure:
 This is not:
 
 - a general directory of GRC products, certifications, books, or regulations;
-- a collection of every job posting or preliminary observation;
+- a job-posting archive or market-wide census;
 - a claim that every listed workflow should be automated;
 - evidence that an employer has a control deficiency;
 - evidence of software budget or purchasing intent;

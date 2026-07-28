@@ -29,7 +29,13 @@ These establish declared hiring demand:
 2. employer-authored public job descriptions;
 3. a job-board copy only when the original is unavailable and the employer attribution is clear.
 
-A mirror and its original count as one source. Copied wording across related entities does not automatically establish independence.
+A mirror and its original count as one source record. Multiple postings from the same employer may provide corroboration and detail, but they do not increase the independent-employer count.
+
+For the public admission threshold, independence is counted at employer level:
+
+- reposts, role variants, locations, and business units under one employer count as one employer;
+- entities under the same ultimate corporate parent are conservatively counted as one employer;
+- an exception requires documented evidence that hiring authority and operating context are genuinely independent.
 
 ### Contextual sources
 
@@ -40,7 +46,7 @@ These may explain constraints, failure modes, terminology, or implementation opt
 3. official product documentation describing supported capabilities and limitations;
 4. public incident, audit, enforcement, or post-incident material where appropriate.
 
-Contextual sources do not substitute for employer demand sources when advancing demand maturity.
+Contextual sources do not substitute for independent employers when advancing demand maturity or deciding public admission.
 
 Search-result snippets alone are not sufficient evidence. Sources should be independently accessible, dated, and interpreted narrowly.
 
@@ -56,7 +62,7 @@ The observable deliverable expected from the task, such as an exception register
 
 Each output should be labelled as one of:
 
-- `explicit` — directly requested or named in a qualifying demand source;
+- `explicit` — directly requested or named in a qualifying employer demand source;
 - `inferred` — derived during normalization and therefore subject to revision.
 
 ### Human boundary
@@ -83,17 +89,19 @@ It must separately identify:
 - remediation execution;
 - unresolved accountability.
 
-These actions are not universally prohibited from automation. The point is that automation capability does not itself create authority, approval, or accountability.
+These actions are not universally prohibited from automation. Automation capability does not itself create authority, approval, or accountability.
 
-## Pattern formation
+## Research maturity and public admission
 
-Demand maturity advances only through independent employer demand evidence:
+The private research process may use these demand-maturity states:
 
-- `observed`: at least one qualifying employer demand source;
-- `repeated`: substantially similar work across at least two independent employers;
+- `observed`: substantially relevant work at one qualifying employer;
+- `repeated`: substantially similar work across two independent employers;
 - `candidate`: substantially similar work across at least three independent employers, with sufficiently stable task, output, and human boundary.
 
-A candidate threshold is a repository admission rule, not a statistical market conclusion.
+Only `candidate` patterns are admitted to the public `workflows/` directory. `Observed` and `repeated` records remain in the private research tracker. The public repository is therefore a curated projection, not the research workspace.
+
+The three-employer threshold is an admission rule, not a statistical market conclusion. It does not prove prevalence, market size, budget, urgency, or software demand.
 
 Alternative interpretations must be recorded. Examples include generic copied job language, a one-off transformation programme, regulatory timing, vendor-specific staffing, or a role combining several unrelated responsibilities.
 
@@ -107,13 +115,13 @@ Challenge maturity is tracked separately from demand maturity:
 - `pilot-tested`: at least one external participant has completed the exercise and supplied feedback;
 - `validated-pattern`: repeated use has materially revised and stabilized the exercise and evaluation model.
 
-A workflow can have strong demand evidence and no challenge. A polished challenge can still rest on weak demand evidence. The two states must not be collapsed.
+A public workflow can have no challenge. A polished challenge can still rest on weak demand evidence and therefore cannot bypass the public admission threshold.
 
 ## Challenge construction
 
 A synthetic challenge must distinguish between:
 
-- **observed demand** — public evidence that employers request the work;
+- **observed demand** — public evidence that independent employers request the work;
 - **contextual constraints** — public material used to make the exercise plausible;
 - **synthetic exercise** — the invented organization, records, systems, policies, errors, and expected deliverables.
 
@@ -156,6 +164,6 @@ An entry must not claim, solely from hiring evidence, that:
 
 ## Review and correction
 
-Entries should retain source dates, source class, status history, and material revisions. Corrections should narrow or withdraw claims when supporting evidence is stale, copied, contradicted, inaccessible, or insufficient.
+Entries should retain source dates, source class, employer identity or grouping rationale in the private tracker, status history, and material revisions. Corrections should narrow or withdraw claims when supporting evidence is stale, copied, contradicted, inaccessible, or insufficient.
 
 The repository should prefer a smaller set of defensible workflows over a large set of weakly supported entries.

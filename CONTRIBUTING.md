@@ -4,12 +4,13 @@ Contributions should improve evidence quality, clarity, or practical usefulness.
 
 ## Before submitting
 
-Confirm that the proposed entry:
+Confirm that the proposed public entry:
 
 - describes a concrete work action;
+- is supported by at least three independent employers;
 - distinguishes employer demand sources from contextual sources;
 - identifies whether each required output is explicit or inferred;
-- states the human judgment, authorization, or approval boundary;
+- states the human judgment, authorization, or approval boundary, or marks it unresolved;
 - distinguishes observed evidence from normalization and automation inference;
 - uses public, independently accessible sources;
 - contains no confidential, personal, or production data;
@@ -20,11 +21,11 @@ Confirm that the proposed entry:
 
 ### New workflow
 
-Use `workflows/_template.md` and complete all required sections.
+Use `workflows/_template.md` and complete all required sections. New public workflow files must already meet the `candidate` threshold. Early `observed` or `repeated` research records are not accepted into `workflows/`.
 
 ### Evidence update
 
-Add an independent employer demand source, add contextual evidence, correct a source date, narrow a claim, or update demand maturity.
+Add an independent employer, add a qualifying source for an existing employer, add contextual evidence, correct a source date, narrow a claim, or update challenge maturity.
 
 ### Challenge proposal
 
@@ -32,24 +33,32 @@ A proposal should define the scenario, inputs, required deliverables, evaluation
 
 ### Correction or withdrawal
 
-Open an issue or pull request when an entry is stale, duplicated, unsupported, misleading, based on copied sources, or no longer meets its stated maturity threshold.
+Open an issue or pull request when an entry is stale, duplicated, unsupported, misleading, based on copied sources, or no longer meets its public admission threshold.
 
 ## Source handling
 
-Prefer official employer pages for demand evidence. Use official documentation, standards bodies, regulators, and first-person practitioner material as contextual evidence.
+Prefer official employer pages for demand evidence. Use official documentation, standards bodies, regulators, first-person practitioner material, incident reports, and product documentation as contextual evidence.
 
 Do not copy substantial portions of job descriptions or articles. Quote only the minimum necessary phrase and provide a link, observation date, source class, and concise interpretation.
 
-A job-board mirror and the original employer posting count as one underlying source. Several copied postings do not establish recurrence.
+Count independence at employer level:
 
-## Demand maturity changes
+- a job-board mirror and the original employer posting count as one underlying source record;
+- multiple postings, locations, or business units from one employer count as one employer;
+- entities under one ultimate corporate parent are conservatively counted as one employer unless independent hiring authority is documented.
 
-Demand maturity requires independent employer evidence:
+## Demand maturity and public admission
 
-- `observed` to `repeated`: a second independent employer demand source;
-- `repeated` to `candidate`: at least three independent employer demand sources plus a sufficiently stable task, output, and human boundary.
+The private research process may use `observed`, `repeated`, and `candidate` states. Only `candidate` workflows are admitted to the public repository.
 
-Contextual sources may strengthen interpretation but do not substitute for employer demand sources.
+A public entry therefore requires:
+
+- at least three independent employers;
+- sufficiently stable task, output, and human boundary;
+- documented alternative explanations;
+- completed adversarial review.
+
+Contextual sources may strengthen interpretation but do not substitute for independent employers.
 
 ## Challenge maturity changes
 
@@ -60,7 +69,7 @@ Challenge maturity is independent of demand maturity:
 - `challenge-ready` to `pilot-tested`: external completion and feedback are documented;
 - `pilot-tested` to `validated-pattern`: repeated feedback has caused material revision and stabilization.
 
-Maintainers may downgrade either status when evidence expires or assumptions prove unstable.
+Maintainers may downgrade challenge status or withdraw a workflow when evidence expires or assumptions prove unstable.
 
 ## Style
 
@@ -73,10 +82,11 @@ Separate facts, normalization choices, interpretation, and challenge-design deci
 A pull request should explain:
 
 - what changed;
-- which employer demand evidence supports the change;
+- which independent employers support the workflow;
+- which qualifying demand sources support each employer;
 - which contextual sources were used;
 - what is explicit and what is inferred;
 - what remains uncertain;
-- whether demand maturity or challenge maturity changes, and why.
+- whether challenge maturity changes, and why.
 
 By contributing original material, you agree that it may be distributed under the repository license. Do not submit material you do not have the right to share.

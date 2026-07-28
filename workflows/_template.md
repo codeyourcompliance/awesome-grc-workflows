@@ -3,11 +3,11 @@ id: replace-with-workflow-id
 title: Replace with workflow title
 domains:
   - technology-risk
-demand_status: observed
+demand_status: candidate
 first_observed: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
-independent_demand_sources: 1
-contextual_sources: 0
+independent_employers: 3
+qualifying_demand_sources: 3
 challenge_status: none
 ---
 
@@ -75,15 +75,15 @@ These actions are not declared universally non-automatable. The workflow records
 
 ## Employer demand evidence
 
-Only qualifying employer demand sources count toward `demand_status`.
+Only qualifying employer demand sources count toward the supporting evidence set. The independent-employer count in frontmatter must reflect unique employers, not the number of links or postings.
 
-| Source | Observed date | Minimal supporting signal | Independence note |
-| --- | --- | --- | --- |
-| Public employer source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Original employer, mirror relationship, or related-entity note |
+| Employer | Source | Observed date | Minimal supporting signal | Independence note |
+| --- | --- | --- | --- | --- |
+| Employer name | Public employer source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Parent-group, mirror, repost, or related-entity assessment |
 
 ## Contextual evidence
 
-Use this section for practitioner material, standards, regulators, official product documentation, incidents, or implementation retrospectives.
+Use this section for practitioner material, standards, regulators, official product documentation, incidents, or implementation retrospectives. Contextual evidence does not affect `independent_employers`.
 
 | Source | Observed date | Context supplied | Limitation |
 | --- | --- | --- | --- |
@@ -120,4 +120,4 @@ Explain what the sources do not establish. Include plausible alternatives such a
 
 | Date | Change | Reason |
 | --- | --- | --- |
-| YYYY-MM-DD | Initial entry | Initial qualifying observation |
+| YYYY-MM-DD | Initial public entry | Candidate threshold met and review completed |

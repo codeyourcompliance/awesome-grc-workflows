@@ -6,7 +6,6 @@ domains:
 first_observed: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
 independent_employers: 3
-qualifying_sources: 3
 challenge_status: none
 ---
 

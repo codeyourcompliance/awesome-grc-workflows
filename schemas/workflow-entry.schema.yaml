@@ -47,9 +47,6 @@ properties:
   independent_employers:
     type: integer
     minimum: 3
-  qualifying_sources:
-    type: integer
-    minimum: 3
   challenge_status:
     type: string
     enum:

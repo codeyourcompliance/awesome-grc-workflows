@@ -11,8 +11,7 @@ required:
   - demand_status
   - first_observed
   - last_reviewed
-  - independent_demand_sources
-  - contextual_sources
+  - independent_employers
   - challenge_status
 properties:
   id:
@@ -41,23 +40,19 @@ properties:
         - technology-risk
         - third-party-risk
   demand_status:
-    type: string
-    enum:
-      - observed
-      - repeated
-      - candidate
+    const: candidate
   first_observed:
     type: string
     format: date
   last_reviewed:
     type: string
     format: date
-  independent_demand_sources:
+  independent_employers:
     type: integer
-    minimum: 1
-  contextual_sources:
+    minimum: 3
+  qualifying_demand_sources:
     type: integer
-    minimum: 0
+    minimum: 3
   challenge_status:
     type: string
     enum:

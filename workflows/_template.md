@@ -3,10 +3,11 @@ id: replace-with-workflow-id
 title: Replace with workflow title
 domains:
   - technology-risk
-status: observed
+demand_status: observed
 first_observed: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
-independent_employers: 1
+independent_demand_sources: 1
+contextual_sources: 0
 challenge_status: none
 ---
 
@@ -18,18 +19,21 @@ One or two sentences describing the bounded work action and why it exists.
 
 ## Observed work task
 
-State the action in operational terms.
+State the action in operational terms. Separate source wording from the normalized task.
 
-## Required output
+## Required outputs
 
-List the observable deliverables or records expected from the work.
+Label each output as `explicit` or `inferred`.
 
-- Output one
-- Output two
+| Output | Basis | Reasoning |
+| --- | --- | --- |
+| Output one | explicit / inferred | Why this classification is justified |
 
-## Human boundary
+## Human and authorization boundary
 
-State the judgment, approval, risk acceptance, regulatory interpretation, or sign-off that remains with an authorized person or role.
+State the judgment, authorization, approval, risk acceptance, regulatory interpretation, or sign-off that remains with an authorized person or role.
+
+When authority is not established by public evidence, state that uncertainty instead of inventing an owner.
 
 ## Typical inputs
 
@@ -47,7 +51,7 @@ State the judgment, approval, risk acceptance, regulatory interpretation, or sig
 - Evidence metadata handling
 - Relevant platform, scripting, query, or reporting capability
 
-Only include capabilities derived from the workflow.
+Only include capabilities derived from the workflow. Distinguish technologies explicitly requested by employers from capabilities inferred as implementation options.
 
 ## Automation boundary
 
@@ -59,29 +63,39 @@ Only include capabilities derived from the workflow.
 - Completeness or freshness checks
 - Exception reporting
 
-### Not delegated by this workflow
+### Requires separate authority or control
 
-- Approval
-- Risk acceptance
+- Approval or risk acceptance
 - Remediation execution
 - Regulatory or legal determination
 - Production-state change
+- Any action whose accountable owner is unresolved
 
-Adjust these lists to the actual workflow.
+These actions are not declared universally non-automatable. The workflow records that technical execution does not itself create authority or accountability.
 
-## Evidence
+## Employer demand evidence
+
+Only qualifying employer demand sources count toward `demand_status`.
 
 | Source | Observed date | Minimal supporting signal | Independence note |
 | --- | --- | --- | --- |
-| Public source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Original employer, official source, or other classification |
+| Public employer source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Original employer, mirror relationship, or related-entity note |
 
-## Evidence limitations
+## Contextual evidence
 
-Explain what the sources do not establish. Include plausible alternative interpretations where relevant.
+Use this section for practitioner material, standards, regulators, official product documentation, incidents, or implementation retrospectives.
+
+| Source | Observed date | Context supplied | Limitation |
+| --- | --- | --- | --- |
+| Public contextual source URL | YYYY-MM-DD | Constraint, failure mode, terminology, or capability | Why it does not independently prove hiring demand |
+
+## Evidence limitations and alternatives
+
+Explain what the sources do not establish. Include plausible alternatives such as copied job language, a temporary programme, bundled responsibilities, regulatory timing, or vendor-specific staffing.
 
 ## Practice challenge
 
-- **Status:** none / proposed / challenge-ready / pilot-tested
+- **Status:** none / proposed / challenge-ready / pilot-tested / validated-pattern
 - **Scenario:** synthetic
 - **Link:** add when available
 
@@ -96,10 +110,11 @@ Explain what the sources do not establish. Include plausible alternative interpr
 ### Evaluation dimensions
 
 - Material issue detection
-- Evidence reasoning
+- Evidence reasoning and traceability
 - False-positive control
 - Handling of uncertainty
-- Respect for human boundary
+- Respect for authorization and accountability boundaries
+- Verification of AI-assisted output, where applicable
 
 ## Revision history
 

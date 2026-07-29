@@ -46,7 +46,7 @@ Do not:
 - treat a course or challenge as evidence of recurring employer demand;
 - copy substantial portions of third-party material;
 - imply that inclusion establishes universal best practice;
-- publish confidential, personal, production, commercial, or non-public research information.
+- publish confidential, personal, production, or commercial information.
 
 Maintainer-owned resources are optional. After removing all maintainer-owned links, the repository and each workflow page must still provide independent public value.
 

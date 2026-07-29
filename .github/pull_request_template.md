@@ -51,7 +51,7 @@ Describe the workflow, evidence, resource, correction, or challenge-design chang
 - [ ] Required outputs are stated and classified by basis.
 - [ ] Human authorization and accountability boundaries are explicit or marked unresolved.
 - [ ] Synthetic material is clearly labelled.
-- [ ] No confidential, personal, production, commercial, or non-public research information is included.
+- [ ] No confidential, personal, production, or commercial information is included.
 - [ ] No control failure, skill shortage, inability to hire, market gap, workflow gap, unmet demand, software buying intent, market size, or universal automation claim is inferred from hiring evidence alone.
 - [ ] Source links, dates, statuses, employer counts, and frontmatter agree.
 - [ ] README, methodology, schema, templates, and directory guidance remain consistent.

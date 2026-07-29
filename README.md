@@ -130,7 +130,7 @@ A published workflow entry must:
 7. distinguish employer evidence, contextual evidence, external resources, and inferred automation opportunity;
 8. retain source dates, status, minimal supporting signals, and independence notes;
 9. label all invented organizations, records, policies, systems, errors, and datasets as synthetic;
-10. avoid reproducing confidential, personal, production, commercial, or non-public research information.
+10. avoid reproducing confidential, personal, production, or commercial information.
 
 See [METHODOLOGY.md](METHODOLOGY.md) for the evidence model and [CONTRIBUTING.md](CONTRIBUTING.md) for submission rules.
 

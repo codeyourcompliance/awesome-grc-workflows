@@ -1,19 +1,22 @@
 ## Summary
 
-Describe the workflow, evidence, correction, or challenge-design change.
+Describe the workflow, evidence, resource, correction, or challenge-design change.
 
 ## Employer evidence
 
 - Independent employers represented:
 - Qualifying public source(s) for each employer:
-- Observation date(s):
-- Parent-group or related-entity assessment:
-- Publication threshold met: yes / no
+- Observation and last-checked date(s):
+- Source status:
+- Parent-group, mirror, or related-entity assessment:
+- Publication threshold met: yes / no / not applicable
 
-## Contextual evidence
+## Contextual evidence and external resources
 
-- Practitioner, official, regulatory, standards, incident, or product source(s):
-- What context they supply:
+- Contextual source(s):
+- What interpretation or constraint they support:
+- External resource(s):
+- What independent value they provide:
 - Why they do not independently establish employer recurrence:
 
 ## Boundaries
@@ -26,26 +29,36 @@ Describe the workflow, evidence, correction, or challenge-design change.
 
 ## First-principles and adversarial review
 
-- [ ] The unit is a bounded work action, not a title, framework, product, or presumed market gap.
+- [ ] The unit is one bounded work action, not a title, framework, product, technology, or presumed gap.
 - [ ] At least three independent employers support a new workflow.
-- [ ] Multiple postings from one employer have not inflated the employer count.
+- [ ] Multiple postings, roles, mirrors, locations, or business units from one employer have not inflated the count.
 - [ ] Related entities have been conservatively grouped by ultimate corporate parent unless independence is publicly documented.
-- [ ] Employer evidence is separated from contextual evidence.
+- [ ] Employer evidence, contextual evidence, external resources, normalized analysis, and synthetic exercises remain separate.
 - [ ] Explicit outputs are separated from inferred outputs.
-- [ ] Challenge maturity is separated from workflow evidence.
+- [ ] Employer-requested technologies, workflow-derived capabilities, and optional implementation choices are separated.
 - [ ] Technical capability does not silently become authority to act.
 - [ ] At least one plausible alternative explanation has been considered.
-- [ ] The entry remains useful without a link to a maintainer-owned challenge or website.
+- [ ] Source status and last-checked dates are recorded.
+- [ ] Dead or replaced links have not silently continued to support publication eligibility.
+- [ ] At least one relevant non-recruitment external resource is included, or its absence is justified.
+- [ ] The entry remains useful without maintainer-owned links.
+- [ ] External practice resources are separate from original synthetic challenges.
+- [ ] An original challenge does not imply a named employer uses the synthetic process.
 
 ## Validation
 
-- [ ] `independent_employers` is at least 3 and matches the evidence table.
+- [ ] `independent_employers` is at least 3 and matches the evidence table for a new workflow.
 - [ ] Required outputs are stated and classified by basis.
 - [ ] Human authorization and accountability boundaries are explicit or marked unresolved.
 - [ ] Synthetic material is clearly labelled.
-- [ ] No confidential, personal, or production data is included.
-- [ ] No control failure, software buying intent, market size, or universal automation claim is inferred from hiring evidence alone.
-- [ ] Source links, dates, counts, and frontmatter agree.
+- [ ] No confidential, personal, production, commercial, or non-public research information is included.
+- [ ] No control failure, skill shortage, inability to hire, market gap, workflow gap, unmet demand, software buying intent, market size, or universal automation claim is inferred from hiring evidence alone.
+- [ ] Source links, dates, statuses, employer counts, and frontmatter agree.
+- [ ] README, methodology, schema, templates, and directory guidance remain consistent.
+
+## Source lifecycle impact
+
+State whether any source became unavailable, was replaced, or changed the publication threshold.
 
 ## Challenge status impact
 

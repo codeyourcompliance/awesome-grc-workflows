@@ -15,7 +15,7 @@ Confirm that the proposed public entry:
 - distinguishes observed evidence from normalization, automation inference, and synthetic exercise design;
 - uses public, independently accessible sources;
 - records observation dates, last-checked dates, source status, and independence notes;
-- contains no confidential, personal, production, commercial, or non-public research information;
+- contains no confidential, personal, production, or commercial information;
 - does not infer a control failure, skill shortage, inability to hire, market gap, workflow gap, unmet demand, software budget, procurement intent, or universal workflow from hiring evidence;
 - labels invented organizations, policies, systems, errors, and datasets as synthetic;
 - remains useful after removing maintainer-owned links.

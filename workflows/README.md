@@ -2,7 +2,7 @@
 
 This directory contains published, normalized workflow entries.
 
-Each file represents one bounded work action, not a job title, control framework, product category, or entire department.
+Each file represents one bounded work action, not a job title, control framework, product category, technology, market gap, or entire department.
 
 Use `_template.md` for new entries.
 
@@ -14,7 +14,9 @@ A workflow file may be added only when:
 - the task, required outputs, and human boundary are sufficiently stable;
 - explicit and inferred outputs are distinguished;
 - public evidence permits independent inspection;
-- alternative explanations and evidence limitations are recorded;
+- source lifecycle information is recorded;
+- alternative explanations and evidence limitations are documented;
+- the page includes useful external resources or justifies their absence;
 - first-principles and adversarial review has been completed.
 
 ## Naming
@@ -29,14 +31,17 @@ Use lowercase kebab-case based on the work action, for example:
 
 Every workflow must state:
 
-- observed work task;
-- required outputs and their basis;
+- source wording and normalized work task;
+- required outputs and their explicit or inferred basis;
 - human and authorization boundary;
-- technical capabilities;
+- employer-requested technologies, workflow-derived capabilities, and optional implementation choices;
 - automation boundary;
 - employer evidence from at least three independent employers;
+- source dates, status, and independence notes;
 - contextual evidence, where used;
+- relevant external resources;
 - known uncertainty and alternative explanations;
-- challenge status.
+- external practice resources, where available;
+- original challenge status and synthetic disclaimer.
 
-A challenge link is optional. A workflow should remain useful even when no challenge exists.
+A maintainer-owned challenge link is optional. A workflow must remain useful when all maintainer-owned links are removed.

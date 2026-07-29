@@ -15,9 +15,15 @@ challenge_status: none
 
 One or two sentences describing the bounded work action and why it exists.
 
-## Observed work task
+## What the work involves
 
-State the action in operational terms. Separate source wording from the normalized task.
+### Source wording
+
+Summarize the employer wording narrowly. Do not treat copied or similar wording as independent recurrence.
+
+### Normalized work task
+
+State one bounded action in operational terms. Explain any material normalization decision.
 
 ## Required outputs
 
@@ -27,11 +33,13 @@ Label each output as `explicit` or `inferred`.
 | --- | --- | --- |
 | Output one | explicit / inferred | Why this classification is justified |
 
+Do not present an inferred output as an observed employer requirement.
+
 ## Human and authorization boundary
 
-State the judgment, authorization, approval, risk acceptance, regulatory interpretation, or sign-off that remains with an authorized person or role.
+State the judgment, authorization, approval, risk acceptance, regulatory interpretation, remediation closure, control conclusion, sign-off, or production change that remains with an authorized person or role.
 
-When authority is not established by public evidence, state that uncertainty instead of inventing an owner.
+When authority is not established by public evidence, mark it unresolved instead of inventing an owner.
 
 ## Typical inputs
 
@@ -45,11 +53,13 @@ When authority is not established by public evidence, state that uncertainty ins
 
 ## Technical capabilities
 
-- Data reconciliation
-- Evidence metadata handling
-- Relevant platform, scripting, query, or reporting capability
+| Capability or technology | Basis | Scope note |
+| --- | --- | --- |
+| Example technology | employer-requested | Identify the employer evidence that names it |
+| Example capability | workflow-derived | Explain why the work reasonably requires it |
+| Example implementation | optional implementation | Make clear that it is one possible approach |
 
-Only include capabilities derived from the workflow. Distinguish technologies explicitly requested by employers from capabilities inferred as implementation options.
+Keep employer-requested technologies, workflow-derived capabilities, and optional implementation choices separate. A technology named in one posting is not universally required.
 
 ## Automation boundary
 
@@ -59,9 +69,11 @@ Only include capabilities derived from the workflow. Distinguish technologies ex
 - Normalization
 - Comparison
 - Completeness or freshness checks
-- Exception reporting
+- Metadata validation
+- Exception identification
+- Reporting
 
-### Requires separate authority or control
+### Requires separate authority or additional controls
 
 - Approval or risk acceptance
 - Remediation execution
@@ -69,43 +81,69 @@ Only include capabilities derived from the workflow. Distinguish technologies ex
 - Production-state change
 - Any action whose accountable owner is unresolved
 
-These actions are not declared universally non-automatable. Technical execution does not itself create authority or accountability.
+These actions are not declared universally non-automatable. Technical execution does not itself create authority, approval rights, or accountability.
 
 ## Employer evidence
 
-At least three independent employers must be represented.
+At least three independent employers must be represented. Count employers, not links, postings, roles, locations, or mirrors.
 
-| Employer | Source | Observed date | Minimal supporting signal | Independence note |
-| --- | --- | --- | --- | --- |
-| Employer name | Public source URL | YYYY-MM-DD | Short paraphrase or minimal quotation | Parent-group, mirror, or related-entity note |
+| Employer | Role title | Source | Observed | Last checked | Source status | Minimal supporting signal | Independence note |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Employer name | Public role title | Public source URL | YYYY-MM-DD | YYYY-MM-DD | active / unavailable / replaced | Short paraphrase or minimal quotation | Parent-group, mirror, or related-entity note |
+
+When a source becomes unavailable, retain only what the published record can still support, mark the source status, and reassess whether the workflow continues to meet the publication threshold.
 
 ## Contextual evidence
 
-Use this section for practitioner material, standards, regulators, official product documentation, incidents, or implementation retrospectives.
+Use this section for material that supports terminology, constraints, failure modes, implementation choices, or capability analysis. It does not independently establish employer recurrence.
 
 | Source | Observed date | Context supplied | Limitation |
 | --- | --- | --- | --- |
-| Public contextual source URL | YYYY-MM-DD | Constraint, failure mode, terminology, or capability | Why it does not independently establish employer recurrence |
+| Public contextual source URL | YYYY-MM-DD | Constraint, failure mode, terminology, or capability | Why it does not establish employer recurrence |
 
-## Evidence limitations and alternatives
+## External resources
 
-Explain what the sources do not establish. Include plausible alternatives such as copied job language, a temporary programme, bundled responsibilities, regulatory timing, or vendor-specific staffing.
+Include relevant, high-quality, non-recruitment resources that give the page independent value. Do not add weak links merely to satisfy a quota.
 
-## Practice challenge
+### Official guidance
+
+- Resource — why it is useful
+
+### Open-source tools
+
+- Resource — what it helps the reader inspect or practise
+
+### Articles and implementation cases
+
+- Resource — what practical context it provides
+
+### Courses, labs, datasets, or external challenges
+
+- Resource — what can be learned or practised
+
+## Practice resources
+
+### External practice resources
+
+- External exercise, lab, or challenge — relevance and limitation
+
+### Original synthetic challenge
 
 - **Status:** none / proposed / challenge-ready / pilot-tested / validated-pattern
 - **Scenario:** synthetic
-- **Link:** add when available
+- **Link:** add only when available
 
-### Candidate exercise inputs
+> This synthetic exercise is based on a recurring work pattern supported by public employer evidence. It does not represent any named employer's internal process.
+
+#### Candidate exercise inputs
 
 - Synthetic file or record type
 
-### Required learner deliverables
+#### Required learner deliverables
 
 - Deliverable
 
-### Evaluation dimensions
+#### Evaluation dimensions
 
 - Material issue detection
 - Evidence reasoning and traceability
@@ -113,6 +151,12 @@ Explain what the sources do not establish. Include plausible alternatives such a
 - Handling of uncertainty
 - Respect for authorization and accountability boundaries
 - Verification of AI-assisted output, where applicable
+
+## Evidence limitations and alternative explanations
+
+Explain what the sources do not establish. Include plausible alternatives such as copied job language, a temporary programme, bundled responsibilities, regulatory timing, vendor-specific staffing, or repeated publication within one corporate group.
+
+Do not infer a skill shortage, inability to hire, market gap, workflow gap, unmet demand, software budget, or procurement intent from employer evidence alone.
 
 ## Revision history
 

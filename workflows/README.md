@@ -6,6 +6,12 @@ Each file represents one bounded work action, not a job title, control framework
 
 Use `_template.md` for new entries.
 
+## Published workflows
+
+| Workflow | Domains | Independent employers | Last reviewed | Challenge status |
+| --- | --- | ---: | --- | --- |
+| [Validate whether completed remediation actions effectively address identified issues](remediation-effectiveness-validation.md) | Remediation validation; technology risk; IT audit | 4 | 2026-08-03 | `none` |
+
 ## Publication threshold
 
 A workflow file may be added only when:

@@ -92,6 +92,12 @@ The initial scope includes:
 - cloud and change-control assurance;
 - AI governance and model-risk operations.
 
+## Published workflows
+
+- [Validate whether completed remediation actions effectively address identified issues](workflows/remediation-effectiveness-validation.md) — post-remediation effectiveness judgment supported by four independent employer groups; challenge status `none`.
+
+See the [workflow index](workflows/README.md) for current entries and publication guidance.
+
 ## Repository structure
 
 ```text
@@ -104,7 +110,8 @@ The initial scope includes:
 │   └── workflow-entry.schema.yaml
 ├── workflows/
 │   ├── README.md
-│   └── _template.md
+│   ├── _template.md
+│   └── remediation-effectiveness-validation.md
 ├── resources/
 │   └── README.md
 └── challenges/
@@ -115,7 +122,7 @@ The initial scope includes:
 - `resources/` defines and curates external resources that provide independent public value.
 - `challenges/` distinguishes external practice resources from original synthetic challenges.
 
-A browsable workflow and resource index will be added as qualifying entries are published. Empty categories and unsupported entries are not added merely to make the repository appear complete.
+Unsupported entries and empty categories are not added merely to make the repository appear complete.
 
 ## Entry requirements
 

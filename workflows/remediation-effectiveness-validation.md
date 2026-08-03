@@ -98,7 +98,10 @@ Technical capability and task performance do not create authorization, approval 
 
 | Capability or technology | Basis | Scope note |
 | --- | --- | --- |
-| Excel, Power BI, GRC tools, ServiceNow, Confluence, QA workflow tools, dashboards, analytics, and data-focused methods | employer-requested | These appear across broader employer role descriptions. No single tool is universally required for the bounded task. |
+| Advanced Excel and analytic techniques | employer-requested | The Crédit Agricole CIB qualifying source names these at the broader role level. They are not universal requirements for the bounded task. |
+| QA workflow tool | employer-requested | The Citi qualifying source names a QA workflow tool at the broader role level. The product is not named and the tool is not universal. |
+| Excel, Business Objects, PowerPoint, Power BI, GRC tools, ServiceNow, and Confluence | employer-requested | The Nomura strong-partial source lists these at the broader role level. Nomura is not part of the exact-support threshold, and none of the tools is universal. |
+| Data, dashboards, digital tools, analytics, and AI-focused capability | employer-requested | The DTCC strong-partial source requests these at the broader role level. DTCC is not part of the exact-support threshold, and no single technology is universal. |
 | Link remediation actions to originating issues, findings, deficiencies, or commitments | workflow-derived | The validator must know which original problem the action was intended to address. |
 | Confirm implementation or claimed completion | workflow-derived | The task begins after implementation or claimed completion. Authorized status sources vary. |
 | Select and document an appropriate validation method | workflow-derived | Employers use testing, compliance monitoring, QA, data analysis, challenge, and closure review. Method selection may require professional judgment. |
@@ -145,18 +148,16 @@ Four independent employer groups directly support the normalized post-remediatio
 | Employer | Role title | Source | Observed | Last checked | Source status | Minimal supporting signal | Independence note |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Northern Trust | Senior IT Analyst - Global Financial Controls | [Public job-board copy](https://www.efinancialcareers.com/jobs-United_States-Chicago-Senior_IT_Analyst_-_Global_Financial_Controls.id24251519) | 2026-07-31 | 2026-08-03 | active | Validates remediation effectiveness and closure of control deficiencies within a wider independent control-testing role. | Counted once at Northern Trust Corporation level. Other Northern Trust roles do not increase the count. |
-| Crédit Agricole Corporate and Investment Bank | Compliance Testing and Monitoring Officer | [Official employer page](https://jobs.ca-cib.com/job/emploi-compliance-testing-and-monitoring-officer_112795.aspx?LCID=2057) | 2026-08-03 | 2026-08-03 | active | Verifies remediation effectiveness for identified compliance issues and documents validation conclusions and successful closures. | Counted once at Crédit Agricole Group level. |
+| Crédit Agricole Corporate and Investment Bank | Compliance Testing and Monitoring Officer | [Official employer page](https://groupecreditagricole.jobs/en/our-jobs-offer/577-170469-4-compliance-testing-and-monitoring-officer-reference--2026-112795--/) | 2026-08-03 | 2026-08-03 | active | Verifies remediation effectiveness for identified compliance issues and documents validation conclusions and successful closures. | Counted once at Crédit Agricole Group level. |
 | Citi | Risk and Controls/Quality Assurance Lead | [Public job-board copy](https://www.efinancialcareers.com/jobs-UK-London-Risk_and_ControlsQuality_Assurance_Lead.id22769785) | 2026-08-03 | 2026-08-03 | active | Independently assesses the effectiveness and sustainability of implemented remedial actions addressing high-severity issues or regulatory commitments. | Counted once at Citigroup Inc. level. |
 | London Stock Exchange Group | Director, Issue, Audit & Regulatory Governance | [Public job-board copy](https://www.efinancialcareers.com/jobs-UK-London-Director_Issue_Audit__Regulatory_Governance.id22765024) | 2026-08-03 | 2026-08-03 | active | Validates whether issue action plans delivered their objectives and addressed the finding and root cause before closure. | Counted once at London Stock Exchange Group plc level. |
 
-### Additional partial and boundary evidence
+### Additional partial evidence
 
-| Employer | Role title | Source | Classification | Supporting signal | Limitation |
-| --- | --- | --- | --- | --- | --- |
-| Nomura Asia | VP, Sr. Principal IT Risk & Control Specialist | [Public job-board copy](https://www.efinancialcareers.com/jobs-Singapore-Singapore-VP_Sr_Principal_IT_Risk__Control_Specialist_Singapore.id22794195) | strong partial | Challenges remediation actions for effectiveness and fitness for purpose, and separately challenges completeness and sustainability of completed actions. | The source does not express all normalized elements as one action linking a completed remediation action, its originating issue, and an effectiveness conclusion. |
-| DTCC | Embedded Risk Associate Director | [Public job-board copy](https://www.efinancialcareers.com/jobs-United_Kingdom-London-Embedded_Risk_Associate_Director.id24533800) | strong partial | Performs data-driven validation of remediation effectiveness and sustainability and separately challenges risk-response sufficiency. | The source does not combine a completed remediation action, its originating risk, and the effectiveness judgment in one bounded comparison statement. |
-
-FWD, EXANTE, Goldman Sachs, and Capital.com were also reviewed but do not contribute to the threshold. FWD has strong action wording but unresolved employer identity; EXANTE describes generic remediation validation and has unresolved identity; Goldman Sachs does not make completion and effectiveness explicit; Capital.com describes method-specific follow-up control testing.
+| Employer | Role title | Source | Observed | Last checked | Source status | Classification | Supporting signal | Independence note | Limitation |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Nomura Asia | VP, Sr. Principal IT Risk & Control Specialist | [Public job-board copy](https://www.efinancialcareers.com/jobs-Singapore-Singapore-VP_Sr_Principal_IT_Risk__Control_Specialist_Singapore.id22794195) | 2026-07-31 | 2026-08-03 | active | strong partial | Challenges remediation actions for effectiveness and fitness for purpose, and separately challenges completeness and sustainability of completed actions. | Counted once at Nomura Holdings, Inc. group level; not counted toward the exact-support threshold. | The source does not express all normalized elements as one action linking a completed remediation action, its originating issue, and an effectiveness conclusion. |
+| DTCC | Embedded Risk Associate Director | [Public job-board copy](https://www.efinancialcareers.com/jobs-United_Kingdom-London-Embedded_Risk_Associate_Director.id24533800) | 2026-08-03 | 2026-08-03 | active | strong partial | Performs data-driven validation of remediation effectiveness and sustainability and separately challenges risk-response sufficiency. | Counted once at The Depository Trust & Clearing Corporation group level; not counted toward the exact-support threshold. | The source does not combine a completed remediation action, its originating risk, and the effectiveness judgment in one bounded comparison statement. |
 
 ## Contextual evidence
 
@@ -219,7 +220,7 @@ None identified as necessary for the initial publication.
 - Four independent employer groups separately support the completed-action, originating-problem, validator, and effectiveness-judgment structure.
 - Different validation methods are not silently treated as one universal implementation method.
 - Nomura and DTCC remain strong partial evidence and are not used to manufacture the employer count.
-- Capital.com remains a control-retesting boundary rather than defining the broader action.
+- Control retesting remains a method boundary rather than defining the broader action.
 - Tracking, remediation execution, documentary review, general control testing, closure administration, final approval, and residual-risk acceptance remain outside the bounded action.
 - Explicit and inferred outputs remain separate.
 - Technical capability is not treated as authority.

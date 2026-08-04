@@ -39,6 +39,12 @@ cases/<case-id>/
 
 A case must remain understandable, completable, and reviewable without access to a private repository, hidden evidence, or maintainer-owned service.
 
+## Private-to-public gate
+
+Public case design based on project research begins only after the bounded workflow passes private qualification, an employer-agnostic normalized workflow and sanitized case-design packet exist, and explicit transfer approval is granted separately.
+
+Only approved sanitized content may inform the public case. Named employers, recruitment URLs, private identifiers, employer-group records, qualification reasoning, internal scoring, private paths, and transfer records do not belong in this repository.
+
 ## Required boundaries
 
 Every case must:
@@ -46,6 +52,7 @@ Every case must:
 - use a fictional organization and synthetic or safely constructed data;
 - train one bounded work action rather than an entire role or GRC function;
 - state included and excluded scope;
+- identify required tools and distinguish them from optional implementation choices;
 - identify required learner deliverables;
 - distinguish evidence review, analysis, recommendation, approval, risk acceptance, legal interpretation, remediation closure, sign-off, and production change;
 - avoid granting authority merely because the learner can perform analysis or use technical tools;
@@ -60,7 +67,7 @@ Technical capability does not create approval rights, closure authority, risk-ac
 | --- | --- |
 | `proposed` | Only the case concept exists. |
 | `design-ready` | Scenario, task, and input design are complete. |
-| `case-ready` | Inputs, deliverables, templates, scoring, reviewer guidance, authority boundaries, and required public resources are complete. |
+| `case-ready` | Inputs, required tools, deliverables, templates, scoring, reviewer guidance, authority boundaries, and required public resources are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
 | `validated-case` | Repeated use and material revision have stabilized the case package. |
 

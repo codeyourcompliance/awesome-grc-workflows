@@ -54,7 +54,7 @@ def main() -> int:
     required_markers = {
         "README.md": [
             "Runnable synthetic GRC work-sample cases",
-            "cases/ is the active public product surface",
+            "`cases/` is the active public product surface",
             "No v2.1 case is published yet",
         ],
         "METHODOLOGY.md": [

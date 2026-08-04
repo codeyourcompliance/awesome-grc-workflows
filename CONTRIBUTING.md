@@ -37,7 +37,7 @@ Confirm that the proposal:
 - includes a scoring rubric, reviewer guide, and reference answer;
 - separates fact, inference, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change;
 - does not grant authority merely because the learner can perform analysis or use technical tools;
-- labels role relationships as `evidence-observed`, `workflow-inferred`, or `case-designed` where a role map is used;
+- labels role relationships as `evidence-observed`, `workflow-inferred`, or `case-designed` when a role map is included;
 - remains completable without private evidence or maintainer-owned services;
 - contains no confidential, personal, production, employer-internal, or commercially sensitive information;
 - avoids unsupported market, hiring, budget, procurement, shortage, gap, universal-technology, or full-automation claims.
@@ -56,11 +56,13 @@ cases/<case-id>/
 ├── scoring-rubric.md
 ├── reviewer-guide.md
 ├── reference-answer.md
-├── role-relevance.md
-└── metadata.yaml
+├── metadata.yaml
+└── role-relevance.md        # optional enhancement
 ```
 
 Additional files may be added when they materially help the learner or reviewer. Do not add empty sections merely to look complete.
+
+A Role Relevance Map is recommended but optional. Its absence does not block `case-ready` when the core case is otherwise complete. Removing it must not make the task unusable or unreviewable.
 
 ## Synthetic data rules
 
@@ -103,9 +105,21 @@ Bounded automation may support read-only collection, normalization, checks, comp
 
 ## External resources
 
-Use public non-recruitment resources when they materially help the learner understand or perform the work. Explain their relevance and limitations.
+A `case-ready`, `pilot-tested`, or `validated-case` submission must include at least one relevant non-recruitment public resource. A `proposed` or `design-ready` submission may omit it while design is incomplete.
 
-Maintainer-owned links are optional and must not be required to complete or review the case.
+For each resource, explain its relevance and limitation. Maintainer-owned links are optional and must not be required to complete or review the case.
+
+## Case maturity
+
+Use only these values:
+
+- `proposed` — only the case concept exists;
+- `design-ready` — scenario, task, and input design are complete;
+- `case-ready` — inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, required external resource, and independent review are complete;
+- `pilot-tested` — at least one independent participant completed the case and supplied feedback;
+- `validated-case` — repeated use and material revision have stabilized the case.
+
+Public `main` should normally contain only `case-ready` or more mature cases.
 
 ## Pull requests
 
@@ -132,15 +146,16 @@ Inspect the complete diff and cross-file consistency before requesting review. D
 No stage automatically authorizes the next.
 
 ```text
-Draft case
-→ package validation
+Proposed case
+→ design-ready package
+→ case-ready validation
 → independent review
 → explicit Ready approval
 → explicit merge approval
 → pilot testing
 ```
 
-A case should remain `draft` until scenario, inputs, task brief, deliverables, rubric, reviewer guide, reference answer, metadata, and authority boundaries are complete and consistent.
+A case must remain below `case-ready` until scenario, inputs, task brief, deliverables, output format, rubric, reviewer guidance, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
 
 ## Style
 

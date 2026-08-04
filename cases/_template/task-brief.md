@@ -12,6 +12,12 @@ Describe one bounded work action using an operational verb, defined object, comp
 
 List every file or evidence class in `inputs/`.
 
+## Required tools
+
+List the tools required to complete the assignment, accepted equivalents, and any product or version constraints. If no specialized tool is required, state that explicitly.
+
+Keep optional tools and implementation choices separate. The learner must not be penalized for using an accepted equivalent unless the case genuinely depends on a specific product or version.
+
 ## Required deliverables
 
 | Deliverable | Format | Required contents |

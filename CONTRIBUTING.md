@@ -24,6 +24,22 @@ Propose a reusable structural improvement. Explain how existing and future cases
 
 Migrate a pre-v2.1 workflow or challenge only through a separate reviewed change. Do not copy private employer research into the public repository.
 
+## Qualification and transfer prerequisite
+
+A public case package must not be used to bypass private workflow qualification.
+
+Before public case design begins, maintainers must confirm that:
+
+- the bounded workflow passed private qualification;
+- an employer-agnostic normalized workflow exists;
+- a sanitized case-design packet was prepared;
+- explicit transfer approval was granted as a separate action; and
+- public design uses only the approved sanitized content.
+
+Do not place private evidence, named employers, recruitment URLs, private identifiers, employer-group records, qualification reasoning, internal scoring, commercial priorities, buyer hypotheses, contact research, private paths, or transfer records in the public repository.
+
+An external contributor may propose a bounded concept for consideration, but a public case PR must not proceed until maintainers have routed the workflow through the same qualification and transfer controls. The public PR should state that the prerequisite was confirmed without exposing private details.
+
 ## Before submitting a case
 
 Confirm that the proposal:
@@ -34,9 +50,11 @@ Confirm that the proposal:
 - states included and excluded scope;
 - contains sufficient but imperfect inputs;
 - requires at least one professional deliverable;
+- states required tools, accepted equivalents, and optional tools separately;
 - includes a scoring rubric, reviewer guide, and reference answer;
 - separates fact, inference, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change;
 - does not grant authority merely because the learner can perform analysis or use technical tools;
+- keeps output basis as `explicit`, `inferred`, or `case-designed`;
 - labels role relationships as `evidence-observed`, `workflow-inferred`, or `case-designed` when a role map is included;
 - remains completable without private evidence or maintainer-owned services;
 - contains no confidential, personal, production, employer-internal, or commercially sensitive information;
@@ -61,6 +79,8 @@ cases/<case-id>/
 ```
 
 Additional files may be added when they materially help the learner or reviewer. Do not add empty sections merely to look complete.
+
+The README, task brief, and metadata must state required tools. If no specialized tool is needed, say so explicitly. Do not convert an optional implementation choice or a technology observed in one source into a universal requirement.
 
 A Role Relevance Map is recommended but optional. Its absence does not block `case-ready` when the core case is otherwise complete. Removing it must not make the task unusable or unreviewable.
 
@@ -115,7 +135,7 @@ Use only these values:
 
 - `proposed` — only the case concept exists;
 - `design-ready` — scenario, task, and input design are complete;
-- `case-ready` — inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, required external resource, and independent review are complete;
+- `case-ready` — inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, required tools, required external resource, and independent review are complete;
 - `pilot-tested` — at least one independent participant completed the case and supplied feedback;
 - `validated-case` — repeated use and material revision have stabilized the case.
 
@@ -128,16 +148,18 @@ Use a focused branch and open a Draft PR by default.
 The PR body should explain:
 
 - the bounded work action;
+- that the private qualification and explicit transfer prerequisite was confirmed, without exposing private details;
 - what is synthetic and how fictional independence was checked;
-- package contents and required deliverables;
+- package contents, required tools, and required deliverables;
 - authority and adjacent-workflow boundaries;
+- output-basis treatment;
 - rubric and reviewer-guide design;
 - relevant public resources;
 - validation performed;
 - first-principles and adversarial findings;
 - known limitations;
 - case maturity requested;
-- explicit non-actions, including whether no private transfer, Ready transition, merge, or branch deletion occurred.
+- explicit non-actions, including whether no Ready transition, merge, or branch deletion occurred.
 
 Inspect the complete diff and cross-file consistency before requesting review. Do not mix unrelated cases or repository cleanup into the same PR.
 
@@ -146,7 +168,12 @@ Inspect the complete diff and cross-file consistency before requesting review. D
 No stage automatically authorizes the next.
 
 ```text
-Proposed case
+Private candidate review
+→ private workflow qualification
+→ employer-agnostic normalized workflow
+→ sanitized case-design packet
+→ explicit transfer approval
+→ proposed public case
 → design-ready package
 → case-ready validation
 → independent review
@@ -155,7 +182,7 @@ Proposed case
 → pilot testing
 ```
 
-A case must remain below `case-ready` until scenario, inputs, task brief, deliverables, output format, rubric, reviewer guidance, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
+A case must remain below `case-ready` until scenario, inputs, task brief, required tools, deliverables, output format, rubric, reviewer guidance, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
 
 ## Style
 

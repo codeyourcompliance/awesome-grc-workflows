@@ -49,6 +49,30 @@ ACTIVE_CASE_DOCS = [
 
 LEGACY_MATURITY_TERMS = ["validated-pattern", "status: draft", "- retired"]
 
+ROLE_RELATIONSHIPS = [
+    "`performs`",
+    "`contributes`",
+    "`reviews`",
+    "`consumes`",
+    "`authorizes/owns`",
+]
+
+OBSOLETE_ROLE_RELATIONSHIPS = [
+    "`perform`",
+    "`contribute`",
+    "`review`",
+    "`consume`",
+    "`authorize/own`",
+]
+
+
+def extract_section(text: str, heading: str) -> str:
+    marker = f"## {heading}"
+    if marker not in text:
+        return ""
+    remainder = text.split(marker, 1)[1]
+    return remainder.split("\n## ", 1)[0]
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
@@ -76,6 +100,9 @@ def main() -> int:
             "Runnable synthetic GRC work-sample cases",
             "`cases/` is the active public product surface",
             "No v2.1 case is published yet",
+            "## Private-to-public gate",
+            "explicit transfer approval",
+            "required tools",
             "`design-ready`",
             "`validated-case`",
         ],
@@ -83,18 +110,31 @@ def main() -> int:
             "Private Evidence Engine",
             "Normalized Bounded Workflow",
             "Public Synthetic Case Package",
+            "## Private-to-public transfer gate",
+            "sanitized case-design packet",
+            "explicit transfer approval",
+            "## Output basis",
+            "## Required tools",
             "Technical capability, access, or automation does not create authorization",
             "A Role Relevance Map is a recommended enhancement",
             "must contain at least one relevant non-recruitment public resource",
         ],
         "CONTRIBUTING.md": [
             "Use `cases/_template/`",
+            "## Qualification and transfer prerequisite",
+            "sanitized case-design packet",
+            "explicit transfer approval",
+            "Private candidate review",
             "A Role Relevance Map is recommended but optional",
             "No stage automatically authorizes the next",
+            "required tools",
             "`validated-case`",
         ],
         "cases/README.md": [
             "This directory is the active public product surface",
+            "## Entry gate",
+            "explicit transfer approval",
+            "required tools",
             "Role relevance is optional",
             "`design-ready`",
             "`validated-case`",
@@ -116,9 +156,14 @@ def main() -> int:
         "cases/_template/README.md": [
             "`metadata.yaml` is the canonical machine-readable source",
             "This case uses a fictional organization",
+            "## Required tools",
             "optional employer-agnostic role-family map",
         ],
-        "cases/_template/task-brief.md": ["## Required deliverables", "## Excluded scope"],
+        "cases/_template/task-brief.md": [
+            "## Required tools",
+            "## Required deliverables",
+            "## Excluded scope",
+        ],
         "cases/_template/scoring-rubric.md": ["## Critical errors", "Authority-boundary discipline"],
         "cases/_template/reviewer-guide.md": ["## Acceptable answer range", "## Authority checks"],
         "cases/_template/reference-answer.md": ["one defensible response", "## Acceptable alternatives"],
@@ -132,6 +177,7 @@ def main() -> int:
     metadata = docs["cases/_template/metadata.yaml"]
     for field in [
         "status: proposed",
+        "required_tools:",
         "synthetic_data: true",
         "private_dependency: false",
         "maintainer_service_required: false",
@@ -148,6 +194,7 @@ def main() -> int:
         "- case-ready",
         "- pilot-tested",
         "- validated-case",
+        "required_tools:",
         "synthetic_data:",
         "const: true",
         "private_dependency:",
@@ -159,9 +206,15 @@ def main() -> int:
         if marker not in schema:
             errors.append(f"case schema: missing {marker!r}")
 
-    required_block = schema.split("required:", 1)[1].split("properties:", 1)[0] if "required:" in schema and "properties:" in schema else ""
+    required_block = (
+        schema.split("required:", 1)[1].split("properties:", 1)[0]
+        if "required:" in schema and "properties:" in schema
+        else ""
+    )
     if "- role_families" in required_block:
         errors.append("case schema: role_families must remain optional")
+    if "- required_tools" not in required_block:
+        errors.append("case schema: required_tools must be required")
 
     if "enum:\n            - case-ready\n            - pilot-tested\n            - validated-case" not in schema:
         errors.append("case schema: case-ready public-resource condition is missing")
@@ -174,6 +227,22 @@ def main() -> int:
             if term in docs[relative]:
                 errors.append(f"{relative}: obsolete active case maturity term {term!r}")
 
+    output_section = extract_section(docs["METHODOLOGY.md"], "Output basis")
+    for marker in ["`explicit`", "`inferred`", "`case-designed`"]:
+        if marker not in output_section:
+            errors.append(f"methodology output basis: missing {marker!r}")
+    for obsolete in ["`employer-observed`", "`workflow-inferred`"]:
+        if obsolete in output_section:
+            errors.append(f"methodology output basis: role-basis term used as output basis {obsolete!r}")
+
+    methodology_role_section = extract_section(docs["METHODOLOGY.md"], "Role relevance")
+    for marker in ROLE_RELATIONSHIPS:
+        if marker not in methodology_role_section:
+            errors.append(f"methodology role relevance: missing relationship {marker!r}")
+    for obsolete in OBSOLETE_ROLE_RELATIONSHIPS:
+        if obsolete in methodology_role_section:
+            errors.append(f"methodology role relevance: obsolete relationship {obsolete!r}")
+
     role_doc = optional_docs.get("cases/_template/role-relevance.md")
     if role_doc:
         for marker in [
@@ -181,9 +250,13 @@ def main() -> int:
             "evidence-observed",
             "workflow-inferred",
             "case-designed",
+            *ROLE_RELATIONSHIPS,
         ]:
             if marker not in role_doc:
                 errors.append(f"role relevance template: missing {marker!r}")
+        for obsolete in OBSOLETE_ROLE_RELATIONSHIPS:
+            if obsolete in role_doc:
+                errors.append(f"role relevance template: obsolete relationship {obsolete!r}")
 
     template_docs = {
         relative: text
@@ -215,7 +288,11 @@ def main() -> int:
     print("CASE_FOUNDATION_VALIDATION=PASS")
     print(f"REQUIRED_PATHS_CHECKED={len(REQUIRED)}")
     print("CASE_MATURITY_MODEL=protocol-v2.1")
+    print("OUTPUT_BASIS=explicit,inferred,case-designed")
+    print("PRIVATE_TO_PUBLIC_GATE=required")
     print("ROLE_RELEVANCE_REQUIRED=false")
+    print("ROLE_RELATIONSHIP_VOCABULARY=protocol-v2.1")
+    print("REQUIRED_TOOLS_FIELD=required")
     print("CASE_READY_PUBLIC_RESOURCE_MINIMUM=1")
     print("ACTIVE_PUBLIC_SURFACE=cases")
     print("LEGACY_WORKFLOW_DIRECTORY=retained")

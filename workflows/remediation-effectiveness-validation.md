@@ -11,6 +11,8 @@ independent_employers: 4
 challenge_status: none
 ---
 
+> **Legacy pre-v2.1 workflow entry.** This page is retained for historical review. It is not a current runnable synthetic case and must not be used as the template for new public work. New cases belong under [`cases/`](../cases/README.md).
+
 # Validate Whether Completed Remediation Actions Effectively Address Identified Issues
 
 ## Summary

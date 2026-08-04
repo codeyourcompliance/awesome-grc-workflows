@@ -20,20 +20,34 @@ REQUIRED = [
     "cases/_template/scoring-rubric.md",
     "cases/_template/reviewer-guide.md",
     "cases/_template/reference-answer.md",
-    "cases/_template/role-relevance.md",
     "cases/_template/metadata.yaml",
     "schemas/case-entry.schema.yaml",
+    "schemas/workflow-entry.schema.yaml",
     "workflows/README.md",
     "workflows/_template.md",
+    "workflows/remediation-effectiveness-validation.md",
     "challenges/README.md",
 ]
 
-TEMPLATE_FILES = [path for path in REQUIRED if path.startswith("cases/_template/")]
+OPTIONAL = ["cases/_template/role-relevance.md"]
+
 BANNED_TEMPLATE_PATTERNS = [
     r"\b(?:SRC|EMP|WFA|CG|MIR)-\d+\b",
     r"(?:sources/employer/|qualification-reviews/|case-design-packets/|transfer-records/)",
     r"(?:linkedin\.com/jobs|efinancialcareers\.com/jobs|myworkdayjobs\.com)",
 ]
+
+ACTIVE_CASE_DOCS = [
+    "README.md",
+    "METHODOLOGY.md",
+    "CONTRIBUTING.md",
+    "cases/README.md",
+    "cases/_template/README.md",
+    "cases/_template/metadata.yaml",
+    "schemas/case-entry.schema.yaml",
+]
+
+LEGACY_MATURITY_TERMS = ["validated-pattern", "status: draft", "- retired"]
 
 
 def main() -> int:
@@ -42,44 +56,72 @@ def main() -> int:
     root = Path(parser.parse_args().root).resolve()
     errors: list[str] = []
 
-    def read(relative: str) -> str:
+    def read(relative: str, required: bool = True) -> str:
         path = root / relative
         if not path.is_file():
-            errors.append(f"missing required path: {relative}")
+            if required:
+                errors.append(f"missing required path: {relative}")
             return ""
         return path.read_text(encoding="utf-8")
 
     docs = {relative: read(relative) for relative in REQUIRED}
+    optional_docs = {
+        relative: read(relative, required=False)
+        for relative in OPTIONAL
+        if (root / relative).is_file()
+    }
 
     required_markers = {
         "README.md": [
             "Runnable synthetic GRC work-sample cases",
             "`cases/` is the active public product surface",
             "No v2.1 case is published yet",
+            "`design-ready`",
+            "`validated-case`",
         ],
         "METHODOLOGY.md": [
             "Private Evidence Engine",
             "Normalized Bounded Workflow",
             "Public Synthetic Case Package",
             "Technical capability, access, or automation does not create authorization",
+            "A Role Relevance Map is a recommended enhancement",
+            "must contain at least one relevant non-recruitment public resource",
         ],
         "CONTRIBUTING.md": [
             "Use `cases/_template/`",
-            "A `case-ready` submission normally includes",
+            "A Role Relevance Map is recommended but optional",
             "No stage automatically authorizes the next",
+            "`validated-case`",
+        ],
+        "cases/README.md": [
+            "This directory is the active public product surface",
+            "Role relevance is optional",
+            "`design-ready`",
+            "`validated-case`",
         ],
         "workflows/README.md": ["Legacy Workflows", "Do not add new workflow entries here"],
         "workflows/_template.md": ["Do Not Use", "cases/_template/"],
-        "challenges/README.md": ["Legacy Challenge Guidance", "Do not add new standalone challenge entries here"],
+        "workflows/remediation-effectiveness-validation.md": [
+            "Legacy pre-v2.1 workflow entry",
+            "not a current runnable synthetic case",
+        ],
+        "schemas/workflow-entry.schema.yaml": [
+            "Legacy Awesome GRC Workflow Entry Frontmatter (pre-v2.1)",
+            "Retained for validation of historical workflow entries only",
+        ],
+        "challenges/README.md": [
+            "Legacy Challenge Guidance",
+            "Do not add new standalone challenge entries here",
+        ],
         "cases/_template/README.md": [
             "`metadata.yaml` is the canonical machine-readable source",
             "This case uses a fictional organization",
+            "optional employer-agnostic role-family map",
         ],
         "cases/_template/task-brief.md": ["## Required deliverables", "## Excluded scope"],
         "cases/_template/scoring-rubric.md": ["## Critical errors", "Authority-boundary discipline"],
         "cases/_template/reviewer-guide.md": ["## Acceptable answer range", "## Authority checks"],
         "cases/_template/reference-answer.md": ["one defensible response", "## Acceptable alternatives"],
-        "cases/_template/role-relevance.md": ["evidence-observed", "workflow-inferred", "case-designed"],
     }
 
     for relative, markers in required_markers.items():
@@ -89,7 +131,7 @@ def main() -> int:
 
     metadata = docs["cases/_template/metadata.yaml"]
     for field in [
-        "status: draft",
+        "status: proposed",
         "synthetic_data: true",
         "private_dependency: false",
         "maintainer_service_required: false",
@@ -101,23 +143,68 @@ def main() -> int:
     schema = docs["schemas/case-entry.schema.yaml"]
     for marker in [
         "Awesome GRC Workflows Public Case Metadata",
+        "- proposed",
+        "- design-ready",
         "- case-ready",
+        "- pilot-tested",
+        "- validated-case",
         "synthetic_data:",
         "const: true",
         "private_dependency:",
         "maintainer_service_required:",
+        "public_resources:",
+        "minItems: 1",
         "pilot_completions:",
     ]:
         if marker not in schema:
             errors.append(f"case schema: missing {marker!r}")
 
+    required_block = schema.split("required:", 1)[1].split("properties:", 1)[0] if "required:" in schema and "properties:" in schema else ""
+    if "- role_families" in required_block:
+        errors.append("case schema: role_families must remain optional")
+
+    if "enum:\n            - case-ready\n            - pilot-tested\n            - validated-case" not in schema:
+        errors.append("case schema: case-ready public-resource condition is missing")
+
     if docs["cases/_template/README.md"].startswith("---"):
         errors.append("case README duplicates canonical metadata in frontmatter")
 
-    for relative in TEMPLATE_FILES:
+    for relative in ACTIVE_CASE_DOCS:
+        for term in LEGACY_MATURITY_TERMS:
+            if term in docs[relative]:
+                errors.append(f"{relative}: obsolete active case maturity term {term!r}")
+
+    role_doc = optional_docs.get("cases/_template/role-relevance.md")
+    if role_doc:
+        for marker in [
+            "optional enhancement",
+            "evidence-observed",
+            "workflow-inferred",
+            "case-designed",
+        ]:
+            if marker not in role_doc:
+                errors.append(f"role relevance template: missing {marker!r}")
+
+    template_docs = {
+        relative: text
+        for relative, text in {**docs, **optional_docs}.items()
+        if relative.startswith("cases/_template/")
+    }
+    private_marker_matches = 0
+    for relative, text in template_docs.items():
         for pattern in BANNED_TEMPLATE_PATTERNS:
-            if re.search(pattern, docs[relative], re.IGNORECASE):
+            if re.search(pattern, text, re.IGNORECASE):
+                private_marker_matches += 1
                 errors.append(f"{relative}: private-layer or recruitment marker matched {pattern}")
+
+    cases_root = root / "cases"
+    public_case_count = 0
+    if cases_root.is_dir():
+        public_case_count = sum(
+            1
+            for path in cases_root.iterdir()
+            if path.is_dir() and not path.name.startswith("_")
+        )
 
     if errors:
         print("CASE_FOUNDATION_VALIDATION=FAIL")
@@ -127,11 +214,15 @@ def main() -> int:
 
     print("CASE_FOUNDATION_VALIDATION=PASS")
     print(f"REQUIRED_PATHS_CHECKED={len(REQUIRED)}")
+    print("CASE_MATURITY_MODEL=protocol-v2.1")
+    print("ROLE_RELEVANCE_REQUIRED=false")
+    print("CASE_READY_PUBLIC_RESOURCE_MINIMUM=1")
     print("ACTIVE_PUBLIC_SURFACE=cases")
     print("LEGACY_WORKFLOW_DIRECTORY=retained")
     print("LEGACY_CHALLENGE_DIRECTORY=retained")
-    print("PUBLIC_CASE_COUNT=0")
-    print("PRIVATE_TRANSFER_PERFORMED=false")
+    print("LEGACY_PAGE_BANNER=PASS")
+    print(f"PUBLIC_CASE_COUNT={public_case_count}")
+    print(f"PRIVATE_LAYER_REFERENCES_IN_TEMPLATE={private_marker_matches}")
     return 0
 
 

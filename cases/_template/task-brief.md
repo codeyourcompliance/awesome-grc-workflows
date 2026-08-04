@@ -35,6 +35,31 @@ The submission must separate:
 - recommendations;
 - decisions reserved for an authorized role.
 
+## Assumption rules
+
+### Permitted assumptions
+
+List only the limited assumptions the learner may make to perform the bounded action. Each permitted assumption must be identified in the submission and must not replace material evidence or authority.
+
+### Prohibited assumptions
+
+The learner must not invent or assume:
+
+- approvals, exceptions, risk acceptance, legal conclusions, sign-off, closure, or production authority;
+- criteria, dates, evidence, system state, ownership, scope, or materiality not supplied by the case;
+- that missing evidence is satisfactory evidence;
+- that an inferred or case-designed output was required by a real employer;
+- that a named organization uses the fictional process.
+
+### When evidence is insufficient
+
+The learner should:
+
+1. state the unresolved question or deficiency;
+2. identify the additional evidence or authorized clarification needed;
+3. explain how the uncertainty affects the analysis;
+4. use a conditional recommendation or escalation rather than forcing a final conclusion.
+
 ## Included scope
 
 - State the actions the learner should perform.

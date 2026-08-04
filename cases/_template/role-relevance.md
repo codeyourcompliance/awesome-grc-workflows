@@ -1,6 +1,8 @@
 # Role Relevance
 
-Role relevance is employer-agnostic navigation and learning guidance. It does not establish universal ownership, current hiring demand, professional authorization, or approval authority.
+This file is an optional enhancement. Its absence does not block `case-ready` when the core case is otherwise complete.
+
+Role relevance is employer-agnostic navigation and learning guidance. It does not establish universal ownership, current hiring demand, professional authorization, or approval authority. Removing this file must not make the core task unusable or unreviewable.
 
 Use only these relationship values:
 

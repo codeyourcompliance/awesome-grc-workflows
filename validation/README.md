@@ -14,9 +14,11 @@ The validator checks:
 - the private qualification, sanitized-packet, and explicit transfer gate wording;
 - independently assigned public-case identity wording and reserved private-ID prefixes in the schema;
 - output basis as `explicit`, `inferred`, or `case-designed`;
+- an explicit `Synthetic Scenario` label in the scenario template;
 - task-brief assumption rules, including permitted assumptions, prohibited assumptions, and treatment of insufficient evidence;
 - an explicit authority-boundary section in the case overview;
 - reviewer-guide coverage of blocking errors, common mistakes, minimum passing evidence, professional judgment, authority checks, and acceptable answer ranges;
+- reference-answer coverage of the preferred answer, acceptable alternatives, unsupported answers, assumptions that change the result, and evidence needed to resolve uncertainty;
 - separate reviewer-guide and reference-answer treatment;
 - optional Role Relevance treatment;
 - canonical Role Relevance relationship and basis vocabulary;

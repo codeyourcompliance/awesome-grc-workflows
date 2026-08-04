@@ -1,0 +1,25 @@
+id: replace-with-case-id
+title: Replace with case title
+status: draft
+version: 0.1.0
+last_reviewed: YYYY-MM-DD
+domains:
+  - technology-risk
+bounded_action: Replace with one bounded work action
+decision_target: Replace with the narrow judgment or recommendation
+difficulty: intermediate
+estimated_time_minutes: 90
+deliverables:
+  - replace-with-deliverable
+role_families:
+  - replace-with-role-family
+authority_boundaries:
+  - final approval remains with a separately authorized fictional role
+  - risk acceptance is outside the learner role
+  - legal or regulatory determination is outside the learner role
+  - production changes are outside the learner role
+synthetic_data: true
+private_dependency: false
+maintainer_service_required: false
+public_resources: []
+pilot_completions: 0

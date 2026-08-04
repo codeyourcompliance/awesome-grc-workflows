@@ -40,6 +40,12 @@ Do not place private evidence, named employers, recruitment URLs, private identi
 
 An external contributor may propose a bounded concept for consideration, but a public case PR must not proceed until maintainers have routed the workflow through the same qualification and transfer controls. The public PR should state that the prerequisite was confirmed without exposing private details.
 
+## Public case identity
+
+Assign a new public case ID independently. Do not reuse a private candidate, source, employer, employer-group, packet, preparation, or transfer identifier.
+
+The public repository must not expose a reversible mapping between a public case ID and private records.
+
 ## Before submitting a case
 
 Confirm that the proposal:
@@ -47,11 +53,13 @@ Confirm that the proposal:
 - trains one bounded work action;
 - uses a fictional organization and synthetic or safely constructed data;
 - is not a lightly renamed version of a real employer or event;
+- uses an independently assigned public case ID;
 - states included and excluded scope;
 - contains sufficient but imperfect inputs;
 - requires at least one professional deliverable;
 - states required tools, accepted equivalents, and optional tools separately;
-- includes a scoring rubric, reviewer guide, and reference answer;
+- defines permitted assumptions, prohibited assumptions, and what to do when evidence is insufficient;
+- includes a scoring rubric, reviewer guide, and reference answer as separate artifacts;
 - separates fact, inference, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change;
 - does not grant authority merely because the learner can perform analysis or use technical tools;
 - keeps output basis as `explicit`, `inferred`, or `case-designed`;
@@ -79,6 +87,10 @@ cases/<case-id>/
 ```
 
 Additional files may be added when they materially help the learner or reviewer. Do not add empty sections merely to look complete.
+
+The README must state the public case ID, bounded action, learning objective, required tools, authority boundary, required deliverables, public resources, and known limitations.
+
+The task brief must state permitted and prohibited assumptions and how the learner should respond when evidence is insufficient.
 
 The README, task brief, and metadata must state required tools. If no specialized tool is needed, say so explicitly. Do not convert an optional implementation choice or a technology observed in one source into a universal requirement.
 
@@ -111,9 +123,20 @@ A rubric must:
 - reward traceability and justified uncertainty;
 - penalize invented facts and authority overreach.
 
-A reviewer guide must explain intentional ambiguities, acceptable answer ranges, partial credit, and escalation conditions.
+A reviewer guide must explain:
 
-A reference answer must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions. It is one defensible answer, not the only answer.
+- mandatory observations;
+- designed non-issues or false positives;
+- intentional ambiguities;
+- acceptable answer ranges;
+- blocking errors and any score cap or automatic-fail treatment;
+- common mistakes;
+- minimum passing evidence beyond a numerical score;
+- professional-judgment areas;
+- authority checks;
+- partial credit and escalation conditions.
+
+A reference answer must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions. It is one defensible answer, not the only answer, and should identify acceptable alternatives where appropriate.
 
 ## Authority and automation
 
@@ -149,11 +172,12 @@ The PR body should explain:
 
 - the bounded work action;
 - that the private qualification and explicit transfer prerequisite was confirmed, without exposing private details;
+- that the public case ID was independently assigned;
 - what is synthetic and how fictional independence was checked;
-- package contents, required tools, and required deliverables;
+- package contents, required tools, assumption rules, and required deliverables;
 - authority and adjacent-workflow boundaries;
 - output-basis treatment;
-- rubric and reviewer-guide design;
+- rubric, reviewer-guide, and reference-answer design;
 - relevant public resources;
 - validation performed;
 - first-principles and adversarial findings;
@@ -182,7 +206,7 @@ Private candidate review
 → pilot testing
 ```
 
-A case must remain below `case-ready` until scenario, inputs, task brief, required tools, deliverables, output format, rubric, reviewer guidance, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
+A case must remain below `case-ready` until scenario, inputs, task brief, assumption rules, required tools, deliverables, output format, rubric, reviewer guide, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
 
 ## Style
 

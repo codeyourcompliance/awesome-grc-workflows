@@ -26,4 +26,4 @@ The validator checks:
 
 The validator reports only what it checks. `PRIVATE_LAYER_REFERENCES_IN_TEMPLATE=0` means the scanned template files contain none of the defined private-layer or recruitment markers. It does not prove that a cross-repository transfer did or did not occur, or that transfer approval is valid.
 
-This remains a structural guard. It does not replace YAML or JSON Schema execution, substantive case review, fictional-independence review, licensing review, first-principles review, adversarial review, transfer authorization review, or pilot testing.
+The foundation validator remains a structural guard and does not itself execute YAML or JSON Schema validation. Schema parsing and sample-instance tests may be run separately. Neither check replaces substantive case review, fictional-independence review, licensing review, first-principles review, adversarial review, transfer authorization review, or pilot testing.

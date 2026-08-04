@@ -38,6 +38,12 @@ The public repository must not contain named employers, recruitment URLs, privat
 
 An external case concept does not bypass this sequence. Maintainers must route the bounded workflow through the same private qualification and sanitized-transfer controls before a public case package is designed or submitted.
 
+## Public case identity
+
+A public case ID must be independently assigned. It must not reuse a private candidate, source, employer, employer-group, packet, preparation, or transfer identifier.
+
+The public ID supports public package identity only. It must not create a reversible mapping to private records in the public repository.
+
 ## Unit of design
 
 The unit is one bounded work action.
@@ -59,16 +65,17 @@ A bounded action should have:
 
 A `case-ready` package includes:
 
-1. **README** — purpose, bounded action, maturity, required tools, package map, and synthetic disclaimer.
+1. **README** — purpose, independently assigned public case ID, bounded action, maturity, required tools, authority boundary, package map, and synthetic disclaimer.
 2. **Scenario** — fictional organization, operating context, roles, systems, dates, and relevant constraints.
-3. **Task brief** — learner role, work action, included and excluded scope, required tools, required deliverables, and submission format.
+3. **Task brief** — learner role, work action, included and excluded scope, required tools, assumption rules, required deliverables, and submission format.
 4. **Inputs** — sufficient but imperfect synthetic evidence.
 5. **Templates** — at least one deliverable template or a clearly defined output format.
 6. **Scoring rubric** — observable criteria, weights, critical errors, and maturity anchors.
-7. **Reviewer guide or reference answer** — review method, acceptable answer range, and one defensible response.
-8. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
-9. **Metadata** — machine-readable status and package information, including required tools.
-10. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
+7. **Reviewer guide** — mandatory observations, false positives, intentional ambiguities, blocking errors, common mistakes, minimum passing evidence, professional-judgment areas, partial credit, and authority checks.
+8. **Reference answer** — one defensible response or clearly defined defensible-answer range that separates facts, assumptions, unresolved questions, findings, recommendations, and reserved decisions.
+9. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
+10. **Metadata** — machine-readable status and package information, including required tools.
+11. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
 
 A narrative prompt alone is not a runnable case.
 
@@ -112,6 +119,17 @@ The public case may use the normalized output class without exposing named-emplo
 These output-basis values are distinct from Role Relevance basis values. Role relationships use `evidence-observed`, `workflow-inferred`, or `case-designed`.
 
 Public learner deliverables are normally `case-designed`, even where their structure is informed by an explicit or inferred normalized output class.
+
+## Assumption rules
+
+Every task brief must define:
+
+- assumptions the learner is permitted to make;
+- assumptions the learner is prohibited from making;
+- how assumptions must be labelled and justified;
+- what the learner should do when evidence is insufficient.
+
+A learner must not invent approvals, criteria, dates, evidence, system state, ownership, materiality, or authority. Missing evidence must not be treated as satisfactory evidence. Where uncertainty is material, the learner should identify the evidence needed and use a conditional recommendation or escalation rather than force a final conclusion.
 
 ## Human authority boundary
 
@@ -206,16 +224,23 @@ Critical errors may include:
 
 ## Reviewer guide and reference answer
 
-The reviewer guide should explain:
+The reviewer guide and reference answer are separate artifacts.
+
+The reviewer guide must explain:
 
 - what must be found;
-- what may reasonably vary;
+- designed non-issues or false positives;
 - which ambiguities are intentional;
+- what may reasonably vary;
 - what evidence would support alternative conclusions;
+- blocking errors and any score cap or automatic-fail treatment;
+- common mistakes;
+- minimum passing evidence beyond a numerical score;
+- where professional judgment may reasonably differ;
 - which authority overreaches are critical;
 - how partial credit is assigned.
 
-The reference answer is one defensible response. It must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions.
+The reference answer is one defensible response, not the only acceptable response. It must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions, and should identify acceptable alternatives where appropriate.
 
 ## External resources and public value
 

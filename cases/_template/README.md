@@ -37,12 +37,12 @@ State the narrow judgment or recommendation the work supports.
 - [`scoring-rubric.md`](scoring-rubric.md) — observable evaluation criteria.
 - [`reviewer-guide.md`](reviewer-guide.md) — review method and acceptable answer range.
 - [`reference-answer.md`](reference-answer.md) — one defensible response.
-- [`role-relevance.md`](role-relevance.md) — employer-agnostic role-family map.
 - [`metadata.yaml`](metadata.yaml) — canonical machine-readable case metadata.
+- [`role-relevance.md`](role-relevance.md) — optional employer-agnostic role-family map.
 
 ## Relevant public resources
 
-List non-recruitment resources and explain their relevance and limitations.
+List at least one relevant non-recruitment public resource before requesting `case-ready` or a more mature status. Explain each resource’s relevance and limitation.
 
 ## Known limitations
 
@@ -52,4 +52,4 @@ State what the case does not teach or prove.
 
 | Version | Date | Change | Reason |
 | --- | --- | --- | --- |
-| 0.1.0 | YYYY-MM-DD | Initial draft | Foundation |
+| 0.1.0 | YYYY-MM-DD | Initial proposal | Foundation |

@@ -33,7 +33,7 @@ cases/<case-id>/
 ├── scoring-rubric.md
 ├── reviewer-guide.md
 ├── reference-answer.md
-├── role-relevance.md
+├── role-relevance.md        # optional enhancement
 └── metadata.yaml
 ```
 
@@ -49,7 +49,7 @@ Every case must:
 - identify required learner deliverables;
 - distinguish evidence review, analysis, recommendation, approval, risk acceptance, legal interpretation, remediation closure, sign-off, and production change;
 - avoid granting authority merely because the learner can perform analysis or use technical tools;
-- label case-designed outputs and role relationships as such;
+- label case-designed outputs and any role relationships as such;
 - include review criteria that reward justified uncertainty over unsupported certainty.
 
 Technical capability does not create approval rights, closure authority, risk-acceptance authority, legal authority, production authority, or accountability.
@@ -58,13 +58,13 @@ Technical capability does not create approval rights, closure authority, risk-ac
 
 | Status | Meaning |
 | --- | --- |
-| `draft` | The package is incomplete or undergoing internal review. |
-| `case-ready` | Scenario, inputs, deliverables, rubric, reviewer guide, reference answer, and authority boundary are complete. |
+| `proposed` | Only the case concept exists. |
+| `design-ready` | Scenario, task, and input design are complete. |
+| `case-ready` | Inputs, deliverables, templates, scoring, reviewer guidance, authority boundaries, and required public resources are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
-| `validated-pattern` | Repeated use and feedback materially revised and stabilized the package. |
-| `retired` | The case is retained for history but should not be used as current practice material. |
+| `validated-case` | Repeated use and material revision have stabilized the case package. |
 
-A private workflow qualification or prepared design packet does not automatically make a public case `case-ready`.
+Public `main` should normally contain only `case-ready` or more mature cases. A private workflow qualification or prepared design packet does not automatically make a public case `case-ready`.
 
 ## Claims this repository does not make
 
@@ -103,7 +103,7 @@ A case does not prove:
 - `cases/` is the active public product surface.
 - `schemas/case-entry.schema.yaml` defines public case metadata.
 - `resources/` contains useful public non-recruitment resources.
-- `workflows/` and `challenges/` are retained as pre-v2.1 legacy material until separately migrated or retired.
+- `workflows/`, `challenges/`, and `schemas/workflow-entry.schema.yaml` are retained as pre-v2.1 legacy material until separately migrated or retired.
 
 ## Current public cases
 

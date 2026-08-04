@@ -113,8 +113,12 @@ def main() -> int:
             "## Private-to-public transfer gate",
             "sanitized case-design packet",
             "explicit transfer approval",
+            "## Public case identity",
+            "A public case ID must be independently assigned",
             "## Output basis",
+            "## Assumption rules",
             "## Required tools",
+            "The reviewer guide and reference answer are separate artifacts",
             "Technical capability, access, or automation does not create authorization",
             "A Role Relevance Map is a recommended enhancement",
             "must contain at least one relevant non-recruitment public resource",
@@ -124,9 +128,12 @@ def main() -> int:
             "## Qualification and transfer prerequisite",
             "sanitized case-design packet",
             "explicit transfer approval",
+            "## Public case identity",
             "Private candidate review",
             "A Role Relevance Map is recommended but optional",
             "No stage automatically authorizes the next",
+            "permitted assumptions",
+            "minimum passing evidence",
             "required tools",
             "`validated-case`",
         ],
@@ -156,17 +163,36 @@ def main() -> int:
         "cases/_template/README.md": [
             "`metadata.yaml` is the canonical machine-readable source",
             "This case uses a fictional organization",
+            "## Public case ID",
             "## Required tools",
+            "## Authority boundary",
             "optional employer-agnostic role-family map",
         ],
         "cases/_template/task-brief.md": [
             "## Required tools",
             "## Required deliverables",
+            "## Assumption rules",
+            "### Permitted assumptions",
+            "### Prohibited assumptions",
+            "### When evidence is insufficient",
             "## Excluded scope",
         ],
-        "cases/_template/scoring-rubric.md": ["## Critical errors", "Authority-boundary discipline"],
-        "cases/_template/reviewer-guide.md": ["## Acceptable answer range", "## Authority checks"],
-        "cases/_template/reference-answer.md": ["one defensible response", "## Acceptable alternatives"],
+        "cases/_template/scoring-rubric.md": [
+            "## Critical errors",
+            "Authority-boundary discipline",
+        ],
+        "cases/_template/reviewer-guide.md": [
+            "## Acceptable answer range",
+            "## Professional judgment",
+            "## Authority checks",
+            "## Blocking errors",
+            "## Common mistakes",
+            "## Minimum passing evidence",
+        ],
+        "cases/_template/reference-answer.md": [
+            "one defensible response",
+            "## Acceptable alternatives",
+        ],
     }
 
     for relative, markers in required_markers.items():
@@ -202,6 +228,8 @@ def main() -> int:
         "public_resources:",
         "minItems: 1",
         "pilot_completions:",
+        "not:",
+        "^(?:wfa|src|emp|cg|mir|aprprep)-",
     ]:
         if marker not in schema:
             errors.append(f"case schema: missing {marker!r}")
@@ -233,7 +261,9 @@ def main() -> int:
             errors.append(f"methodology output basis: missing {marker!r}")
     for obsolete in ["`employer-observed`", "`workflow-inferred`"]:
         if obsolete in output_section:
-            errors.append(f"methodology output basis: role-basis term used as output basis {obsolete!r}")
+            errors.append(
+                f"methodology output basis: role-basis term used as output basis {obsolete!r}"
+            )
 
     methodology_role_section = extract_section(docs["METHODOLOGY.md"], "Role relevance")
     for marker in ROLE_RELATIONSHIPS:
@@ -268,7 +298,9 @@ def main() -> int:
         for pattern in BANNED_TEMPLATE_PATTERNS:
             if re.search(pattern, text, re.IGNORECASE):
                 private_marker_matches += 1
-                errors.append(f"{relative}: private-layer or recruitment marker matched {pattern}")
+                errors.append(
+                    f"{relative}: private-layer or recruitment marker matched {pattern}"
+                )
 
     cases_root = root / "cases"
     public_case_count = 0
@@ -290,6 +322,10 @@ def main() -> int:
     print("CASE_MATURITY_MODEL=protocol-v2.1")
     print("OUTPUT_BASIS=explicit,inferred,case-designed")
     print("PRIVATE_TO_PUBLIC_GATE=required")
+    print("PUBLIC_CASE_ID_INDEPENDENT=true")
+    print("ASSUMPTION_RULES=required")
+    print("AUTHORITY_OVERVIEW_REQUIRED=true")
+    print("REVIEWER_GUIDE_MINIMUMS=required")
     print("ROLE_RELEVANCE_REQUIRED=false")
     print("ROLE_RELATIONSHIP_VOCABULARY=protocol-v2.1")
     print("REQUIRED_TOOLS_FIELD=required")

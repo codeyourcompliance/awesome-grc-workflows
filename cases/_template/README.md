@@ -4,6 +4,10 @@
 
 `metadata.yaml` is the canonical machine-readable source for case identity, status, version, domains, difficulty, review date, and required tools. Do not duplicate those fields in README frontmatter.
 
+## Public case ID
+
+Assign an independently created public case ID in `metadata.yaml`. Do not reuse a private candidate, source, employer, employer-group, packet, preparation, or transfer identifier.
+
 ## Bounded work action
 
 State one operational action.
@@ -30,6 +34,10 @@ Keep required tools separate from optional implementation choices. Do not turn a
 
 - Approval, risk acceptance, legal interpretation, remediation execution, production change, or adjacent workflow not assigned to the learner.
 
+## Authority boundary
+
+State what the learner may analyze, test, prepare, or recommend. State separately which decisions remain with authorized fictional roles, including approval, exception or residual-risk acceptance, legal or regulatory determination, final sign-off, remediation closure, and production change.
+
 ## Required deliverables
 
 - Professional deliverable and required format.
@@ -37,11 +45,11 @@ Keep required tools separate from optional implementation choices. Do not turn a
 ## Package map
 
 - [`scenario.md`](scenario.md) — fictional operating context and authority model.
-- [`task-brief.md`](task-brief.md) — learner assignment, required tools, and submission requirements.
+- [`task-brief.md`](task-brief.md) — learner assignment, required tools, assumption rules, and submission requirements.
 - [`inputs/`](inputs/) — synthetic evidence package.
 - [`templates/`](templates/) — optional deliverable structures.
 - [`scoring-rubric.md`](scoring-rubric.md) — observable evaluation criteria.
-- [`reviewer-guide.md`](reviewer-guide.md) — review method and acceptable answer range.
+- [`reviewer-guide.md`](reviewer-guide.md) — review method, blocking errors, minimum passing evidence, and acceptable answer range.
 - [`reference-answer.md`](reference-answer.md) — one defensible response.
 - [`metadata.yaml`](metadata.yaml) — canonical machine-readable case metadata.
 - [`role-relevance.md`](role-relevance.md) — optional employer-agnostic role-family map.

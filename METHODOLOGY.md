@@ -24,6 +24,20 @@ The public layer independently designs a fictional organization, synthetic evide
 
 No stage automatically authorizes the next.
 
+## Private-to-public transfer gate
+
+Public case design based on private research may begin only when:
+
+1. the bounded workflow has passed private qualification;
+2. an employer-agnostic normalized workflow exists;
+3. a sanitized case-design packet has been prepared;
+4. explicit transfer approval has been granted as a separate action; and
+5. only the approved sanitized content is used in public design.
+
+The public repository must not contain named employers, recruitment URLs, private identifiers, employer-group records, private qualification reasoning, internal scoring, commercial priorities, buyer hypotheses, contact research, private paths, or transfer records.
+
+An external case concept does not bypass this sequence. Maintainers must route the bounded workflow through the same private qualification and sanitized-transfer controls before a public case package is designed or submitted.
+
 ## Unit of design
 
 The unit is one bounded work action.
@@ -45,15 +59,15 @@ A bounded action should have:
 
 A `case-ready` package includes:
 
-1. **README** — purpose, bounded action, maturity, package map, and synthetic disclaimer.
+1. **README** — purpose, bounded action, maturity, required tools, package map, and synthetic disclaimer.
 2. **Scenario** — fictional organization, operating context, roles, systems, dates, and relevant constraints.
-3. **Task brief** — learner role, work action, included and excluded scope, required deliverables, and submission format.
+3. **Task brief** — learner role, work action, included and excluded scope, required tools, required deliverables, and submission format.
 4. **Inputs** — sufficient but imperfect synthetic evidence.
 5. **Templates** — at least one deliverable template or a clearly defined output format.
 6. **Scoring rubric** — observable criteria, weights, critical errors, and maturity anchors.
 7. **Reviewer guide or reference answer** — review method, acceptable answer range, and one defensible response.
 8. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
-9. **Metadata** — machine-readable status and package information.
+9. **Metadata** — machine-readable status and package information, including required tools.
 10. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
 
 A narrative prompt alone is not a runnable case.
@@ -85,15 +99,19 @@ Where relevant, include:
 
 Do not introduce noise merely to make the case difficult. Every ambiguity should test a stated capability or review criterion.
 
-## Output classes
+## Output basis
 
-Keep these classes separate:
+Keep these output-basis classes separate:
 
-- `employer-observed` — used only in private qualification and not exposed as named-employer evidence in the public case;
-- `workflow-inferred` — derived from the bounded action;
-- `case-designed` — created to make the exercise usable and reviewable.
+- `explicit` — an output directly named or requested in qualifying private evidence;
+- `inferred` — an output derived from the bounded workflow logic but not directly named in qualifying evidence;
+- `case-designed` — an output created to make the synthetic exercise usable and reviewable.
 
-Public deliverables are normally `case-designed`. They must not be represented as outputs required by a real employer unless separately authorized and supported.
+The public case may use the normalized output class without exposing named-employer evidence. It must not present an `inferred` or `case-designed` output as an observed employer requirement.
+
+These output-basis values are distinct from Role Relevance basis values. Role relationships use `evidence-observed`, `workflow-inferred`, or `case-designed`.
+
+Public learner deliverables are normally `case-designed`, even where their structure is informed by an explicit or inferred normalized output class.
 
 ## Human authority boundary
 
@@ -134,11 +152,11 @@ Do not claim either universal full automation or universal non-automability.
 
 A case may identify employer-agnostic role families that may:
 
-- `perform`;
-- `contribute`;
-- `review`;
-- `consume`;
-- `authorize/own`.
+- `performs`;
+- `contributes`;
+- `reviews`;
+- `consumes`;
+- `authorizes/owns`.
 
 Where used, classify the relationship as:
 
@@ -147,6 +165,15 @@ Where used, classify the relationship as:
 - `case-designed`.
 
 Role relevance supports navigation and learning. It does not establish universal job ownership, current hiring demand, professional authorization, or approval authority. Role relevance completeness is separate from case maturity.
+
+## Required tools
+
+Every case overview must state the tools required to complete the work.
+
+- If no specialized tool is required, state `none` or describe the ordinary editor or spreadsheet capability needed.
+- Distinguish required tools from accepted equivalents and optional implementation choices.
+- Do not convert a technology observed in one source or preferred by a maintainer into a universal requirement.
+- A product or version may be mandatory only when the synthetic task genuinely depends on it and the requirement is disclosed before the learner starts.
 
 ## Evaluation model
 
@@ -210,13 +237,13 @@ If not, the case is not ready.
 | --- | --- |
 | `proposed` | Only the case concept exists. |
 | `design-ready` | Scenario, task, and input design are complete. |
-| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundaries, external resources, and independent review are complete. |
+| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundaries, required tools, external resources, and independent review are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
 | `validated-case` | Repeated use and material revision have stabilized the package. |
 
 Public `main` should normally contain only `case-ready` or more mature cases.
 
-A case must not be marked `case-ready`, published, or merged merely because a private candidate is qualified or a design packet exists. Case maturity does not strengthen employer evidence.
+A case must not be marked `case-ready`, published, or merged merely because a private candidate is qualified or a design packet exists. Explicit transfer approval and complete public case review remain separate gates. Case maturity does not strengthen employer evidence.
 
 ## Prohibited claims
 
@@ -247,7 +274,7 @@ Before release, inspect the complete package for:
 - internal consistency across scenario, inputs, task, rubric, and answer;
 - private-information leakage;
 - unsupported authority;
-- output-class confusion;
+- output-basis confusion;
 - adjacent-workflow confusion;
 - hidden dependencies;
 - misleading claims;

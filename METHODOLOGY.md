@@ -66,13 +66,13 @@ A bounded action should have:
 A `case-ready` package includes:
 
 1. **README** — purpose, independently assigned public case ID, bounded action, maturity, required tools, authority boundary, package map, and synthetic disclaimer.
-2. **Scenario** — fictional organization, operating context, roles, systems, dates, and relevant constraints.
+2. **Synthetic scenario** — a file explicitly labelled `Synthetic Scenario` that defines the fictional organization, operating context, roles, systems, dates, and relevant constraints.
 3. **Task brief** — learner role, work action, included and excluded scope, required tools, assumption rules, required deliverables, and submission format.
 4. **Inputs** — sufficient but imperfect synthetic evidence.
 5. **Templates** — at least one deliverable template or a clearly defined output format.
 6. **Scoring rubric** — observable criteria, weights, critical errors, and maturity anchors.
 7. **Reviewer guide** — mandatory observations, false positives, intentional ambiguities, blocking errors, common mistakes, minimum passing evidence, professional-judgment areas, partial credit, and authority checks.
-8. **Reference answer** — one defensible response or clearly defined defensible-answer range that separates facts, assumptions, unresolved questions, findings, recommendations, and reserved decisions.
+8. **Reference answer** — one defensible response or clearly defined defensible-answer range that identifies the preferred answer, acceptable alternatives, unsupported answers, result-changing assumptions, evidence needed to resolve uncertainty, facts, unresolved questions, findings, recommendations, and reserved decisions.
 9. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
 10. **Metadata** — machine-readable status and package information, including required tools.
 11. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
@@ -84,6 +84,8 @@ A Role Relevance Map is a recommended enhancement, not an absolute `case-ready` 
 ## Synthetic independence
 
 Public organizations, systems, records, authority structures, incidents, policies, dates, and datasets must be fictional or safely constructed.
+
+The scenario file must be explicitly labelled `Synthetic Scenario` at the top. A disclaimer elsewhere in the package does not replace the scenario-level label.
 
 Do not pseudonymize a real employer as a “leading bank,” “major consultancy,” or similar label. Do not preserve a real organization’s distinctive combination of facts while changing only its name.
 
@@ -240,7 +242,14 @@ The reviewer guide must explain:
 - which authority overreaches are critical;
 - how partial credit is assigned.
 
-The reference answer is one defensible response, not the only acceptable response. It must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions, and should identify acceptable alternatives where appropriate.
+The reference answer is one defensible response, not the only acceptable response. For a judgment-bearing case, it must identify:
+
+- the preferred answer or preferred conditional answer;
+- acceptable alternatives and their required evidence or reasoning;
+- unsupported answers and why they fail;
+- assumptions that materially change the result;
+- evidence needed to resolve material uncertainty;
+- established facts, unresolved questions, material findings, recommendations, and decisions reserved for authorized roles.
 
 ## External resources and public value
 

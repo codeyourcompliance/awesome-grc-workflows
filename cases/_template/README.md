@@ -1,18 +1,8 @@
----
-id: replace-with-case-id
-title: Replace with case title
-status: draft
-domains:
-  - technology-risk
-difficulty: intermediate
-estimated_time_minutes: 90
-version: 0.1.0
-last_reviewed: YYYY-MM-DD
----
-
 # Case title
 
 > This case uses a fictional organization and synthetic or safely constructed data. It does not represent any named employer’s internal process, systems, controls, authority structure, or records.
+
+`metadata.yaml` is the canonical machine-readable source for case identity, status, version, domains, difficulty, and review date. Do not duplicate those fields in README frontmatter.
 
 ## Bounded work action
 
@@ -48,7 +38,7 @@ State the narrow judgment or recommendation the work supports.
 - [`reviewer-guide.md`](reviewer-guide.md) — review method and acceptable answer range.
 - [`reference-answer.md`](reference-answer.md) — one defensible response.
 - [`role-relevance.md`](role-relevance.md) — employer-agnostic role-family map.
-- [`metadata.yaml`](metadata.yaml) — machine-readable case metadata.
+- [`metadata.yaml`](metadata.yaml) — canonical machine-readable case metadata.
 
 ## Relevant public resources
 

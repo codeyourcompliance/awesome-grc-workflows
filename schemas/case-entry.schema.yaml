@@ -15,7 +15,6 @@ required:
   - difficulty
   - estimated_time_minutes
   - deliverables
-  - role_families
   - authority_boundaries
   - synthetic_data
   - private_dependency
@@ -32,11 +31,11 @@ properties:
   status:
     type: string
     enum:
-      - draft
+      - proposed
+      - design-ready
       - case-ready
       - pilot-tested
-      - validated-pattern
-      - retired
+      - validated-case
   version:
     type: string
     pattern: "^[0-9]+\.[0-9]+\.[0-9]+$"
@@ -119,7 +118,22 @@ allOf:
   - if:
       properties:
         status:
+          enum:
+            - case-ready
+            - pilot-tested
+            - validated-case
+      required:
+        - status
+    then:
+      properties:
+        public_resources:
+          minItems: 1
+  - if:
+      properties:
+        status:
           const: pilot-tested
+      required:
+        - status
     then:
       properties:
         pilot_completions:
@@ -127,7 +141,9 @@ allOf:
   - if:
       properties:
         status:
-          const: validated-pattern
+          const: validated-case
+      required:
+        - status
     then:
       properties:
         pilot_completions:

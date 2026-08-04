@@ -49,14 +49,16 @@ A `case-ready` package includes:
 2. **Scenario** — fictional organization, operating context, roles, systems, dates, and relevant constraints.
 3. **Task brief** — learner role, work action, included and excluded scope, required deliverables, and submission format.
 4. **Inputs** — sufficient but imperfect synthetic evidence.
-5. **Templates** — optional structures for the expected professional output.
+5. **Templates** — at least one deliverable template or a clearly defined output format.
 6. **Scoring rubric** — observable criteria, weights, critical errors, and maturity anchors.
-7. **Reviewer guide** — review method, acceptable answer range, ambiguity treatment, and authority checks.
-8. **Reference answer** — one defensible response, not the only possible response.
-9. **Role relevance** — optional employer-agnostic role-family relationships.
-10. **Metadata** — machine-readable status and package information.
+7. **Reviewer guide or reference answer** — review method, acceptable answer range, and one defensible response.
+8. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
+9. **Metadata** — machine-readable status and package information.
+10. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
 
 A narrative prompt alone is not a runnable case.
+
+A Role Relevance Map is a recommended enhancement, not an absolute `case-ready` requirement. Removing role relevance must not make the core task unusable or unreviewable.
 
 ## Synthetic independence
 
@@ -144,7 +146,7 @@ Where used, classify the relationship as:
 - `workflow-inferred`;
 - `case-designed`.
 
-Role relevance supports navigation and learning. It does not establish universal job ownership, current hiring demand, professional authorization, or approval authority.
+Role relevance supports navigation and learning. It does not establish universal job ownership, current hiring demand, professional authorization, or approval authority. Role relevance completeness is separate from case maturity.
 
 ## Evaluation model
 
@@ -188,23 +190,33 @@ The reviewer guide should explain:
 
 The reference answer is one defensible response. It must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions.
 
-## Public value test
+## External resources and public value
+
+A `case-ready`, `pilot-tested`, or `validated-case` package must contain at least one relevant non-recruitment public resource. A `proposed` or `design-ready` package may omit it while design is incomplete.
+
+For each included resource, explain:
+
+- what it helps the learner understand or perform;
+- what it does not establish;
+- why it is not merely decorative.
 
 After removing all maintainer-owned links, can a user still understand the scenario, inspect the inputs, complete the task, produce a deliverable, and apply the review criteria?
 
 If not, the case is not ready.
 
-Each case should normally include at least one relevant non-recruitment public resource. A weak link should not be added merely to satisfy a quota.
-
 ## Case maturity and release gates
 
-- `draft` — incomplete or under internal review;
-- `case-ready` — complete package and independent review passed;
-- `pilot-tested` — at least one independent participant completed the case and supplied feedback;
-- `validated-pattern` — repeated use materially revised and stabilized the case;
-- `retired` — retained for history but not current practice.
+| Status | Meaning |
+| --- | --- |
+| `proposed` | Only the case concept exists. |
+| `design-ready` | Scenario, task, and input design are complete. |
+| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundaries, external resources, and independent review are complete. |
+| `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
+| `validated-case` | Repeated use and material revision have stabilized the package. |
 
-A case must not be marked `case-ready`, published, or merged merely because a private candidate is qualified or a design packet exists.
+Public `main` should normally contain only `case-ready` or more mature cases.
+
+A case must not be marked `case-ready`, published, or merged merely because a private candidate is qualified or a design packet exists. Case maturity does not strengthen employer evidence.
 
 ## Prohibited claims
 
@@ -223,7 +235,7 @@ Commercial and market claims require separate evidence.
 
 ## Legacy public content
 
-Files under `workflows/` and `challenges/` were created under the pre-v2.1 employer-evidence-centred model. They are retained for history and may be migrated only through a separate reviewed change.
+Files under `workflows/` and `challenges/`, together with `schemas/workflow-entry.schema.yaml`, were created under the pre-v2.1 employer-evidence-centred model. They are retained for history and may be migrated only through a separate reviewed change.
 
 Do not use a legacy workflow page as the template for a new case.
 

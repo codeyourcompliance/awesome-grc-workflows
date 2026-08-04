@@ -1,4 +1,5 @@
-id: replace-with-case-id
+# `id` must be an independently assigned public case ID. Do not reuse a private identifier.
+id: replace-with-public-case-id
 title: Replace with case title
 status: proposed
 version: 0.1.0

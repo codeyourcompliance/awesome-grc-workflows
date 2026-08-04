@@ -1,6 +1,7 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://github.com/codeyourcompliance/awesome-grc-workflows/schemas/workflow-entry.schema.yaml"
-title: Awesome GRC Workflow Entry Frontmatter
+title: Legacy Awesome GRC Workflow Entry Frontmatter (pre-v2.1)
+$comment: "Retained for validation of historical workflow entries only. New public work must use schemas/case-entry.schema.yaml and cases/_template/."
 
 type: object
 additionalProperties: false

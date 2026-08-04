@@ -26,6 +26,8 @@ properties:
   id:
     type: string
     pattern: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    not:
+      pattern: '^(?:wfa|src|emp|cg|mir|aprprep)-'
   title:
     type: string
     minLength: 5

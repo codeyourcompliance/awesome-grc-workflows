@@ -24,6 +24,12 @@ cases/<case-id>/
 
 Use [`_template/`](./_template/README.md) when creating a new case.
 
+## Entry gate
+
+A public case must not bypass private workflow qualification. Before public design begins, maintainers must confirm that the bounded workflow passed qualification, an employer-agnostic normalized workflow and sanitized case-design packet exist, and explicit transfer approval was granted separately.
+
+Only approved sanitized content may inform the public case. Private evidence, named employers, recruitment URLs, private identifiers, qualification records, internal scoring, private paths, and transfer records must not be added here.
+
 ## Package rules
 
 A case must:
@@ -31,6 +37,7 @@ A case must:
 - use a fictional organization and synthetic or safely constructed data;
 - train one bounded work action;
 - identify the trigger, inputs, action, decision target, deliverables, exclusions, and failure modes;
+- state required tools and distinguish them from accepted equivalents and optional tools;
 - contain enough imperfect evidence to require professional reasoning;
 - separate facts, assumptions, inference, recommendations, and authorized decisions;
 - state who may analyze, recommend, approve, accept risk, interpret legal requirements, sign off, close remediation, and change production state;
@@ -53,7 +60,7 @@ Every case must include:
 | --- | --- |
 | `proposed` | Only the case concept exists. |
 | `design-ready` | Scenario, task, and input design are complete. |
-| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, external resource, validation, and independent review are complete. |
+| `case-ready` | Inputs, required tools, deliverables, output format, scoring, reviewer guidance, authority boundary, external resource, validation, and independent review are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
 | `validated-case` | Repeated use materially revised and stabilized the package. |
 

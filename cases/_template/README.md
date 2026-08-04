@@ -2,7 +2,7 @@
 
 > This case uses a fictional organization and synthetic or safely constructed data. It does not represent any named employer’s internal process, systems, controls, authority structure, or records.
 
-`metadata.yaml` is the canonical machine-readable source for case identity, status, version, domains, difficulty, and review date. Do not duplicate those fields in README frontmatter.
+`metadata.yaml` is the canonical machine-readable source for case identity, status, version, domains, difficulty, review date, and required tools. Do not duplicate those fields in README frontmatter.
 
 ## Bounded work action
 
@@ -15,6 +15,12 @@ Explain what the learner should be able to perform and communicate after complet
 ## Decision target
 
 State the narrow judgment or recommendation the work supports.
+
+## Required tools
+
+List the tools required to complete the case, accepted equivalents, and any version constraints. If no specialized tool is required, state `none` or describe the ordinary editor or spreadsheet capability needed.
+
+Keep required tools separate from optional implementation choices. Do not turn a maintainer preference or a technology observed in one source into a universal requirement.
 
 ## Included scope
 
@@ -31,7 +37,7 @@ State the narrow judgment or recommendation the work supports.
 ## Package map
 
 - [`scenario.md`](scenario.md) — fictional operating context and authority model.
-- [`task-brief.md`](task-brief.md) — learner assignment and submission requirements.
+- [`task-brief.md`](task-brief.md) — learner assignment, required tools, and submission requirements.
 - [`inputs/`](inputs/) — synthetic evidence package.
 - [`templates/`](templates/) — optional deliverable structures.
 - [`scoring-rubric.md`](scoring-rubric.md) — observable evaluation criteria.

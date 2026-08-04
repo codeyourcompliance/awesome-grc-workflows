@@ -50,14 +50,17 @@ Only approved sanitized content may inform the public case. Named employers, rec
 Every case must:
 
 - use a fictional organization and synthetic or safely constructed data;
+- use an independently assigned public case ID that does not reuse a private identifier;
 - train one bounded work action rather than an entire role or GRC function;
 - state included and excluded scope;
 - identify required tools and distinguish them from optional implementation choices;
+- define permitted assumptions, prohibited assumptions, and the response required when evidence is insufficient;
 - identify required learner deliverables;
 - distinguish evidence review, analysis, recommendation, approval, risk acceptance, legal interpretation, remediation closure, sign-off, and production change;
 - avoid granting authority merely because the learner can perform analysis or use technical tools;
 - label case-designed outputs and any role relationships as such;
-- include review criteria that reward justified uncertainty over unsupported certainty.
+- include review criteria that reward justified uncertainty over unsupported certainty;
+- include a reviewer guide and a separate reference answer.
 
 Technical capability does not create approval rights, closure authority, risk-acceptance authority, legal authority, production authority, or accountability.
 
@@ -67,7 +70,7 @@ Technical capability does not create approval rights, closure authority, risk-ac
 | --- | --- |
 | `proposed` | Only the case concept exists. |
 | `design-ready` | Scenario, task, and input design are complete. |
-| `case-ready` | Inputs, required tools, deliverables, templates, scoring, reviewer guidance, authority boundaries, and required public resources are complete. |
+| `case-ready` | Inputs, assumption rules, required tools, deliverables, templates, scoring, complete reviewer guidance, reference answer, authority boundaries, and required public resources are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
 | `validated-case` | Repeated use and material revision have stabilized the case package. |
 

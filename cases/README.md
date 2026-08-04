@@ -18,8 +18,8 @@ cases/<case-id>/
 ├── scoring-rubric.md
 ├── reviewer-guide.md
 ├── reference-answer.md
-├── role-relevance.md
-└── metadata.yaml
+├── metadata.yaml
+└── role-relevance.md        # optional enhancement
 ```
 
 Use [`_template/`](./_template/README.md) when creating a new case.
@@ -37,6 +37,10 @@ A case must:
 - include review criteria that permit defensible alternative conclusions;
 - remain usable without private evidence or maintainer-owned services.
 
+A `case-ready` or more mature case must include at least one relevant non-recruitment public resource, with its relevance and limitation explained.
+
+Role relevance is optional. Where included, it must remain employer-agnostic and must not create unsupported ownership or authority.
+
 ## Standard disclaimer
 
 Every case must include:
@@ -47,11 +51,13 @@ Every case must include:
 
 | Status | Required treatment |
 | --- | --- |
-| `draft` | Incomplete or under internal review; do not present as ready for independent use. |
-| `case-ready` | Complete package, validation, first-principles review, adversarial review, and independent review passed. |
+| `proposed` | Only the case concept exists. |
+| `design-ready` | Scenario, task, and input design are complete. |
+| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, external resource, validation, and independent review are complete. |
 | `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
-| `validated-pattern` | Repeated use materially revised and stabilized the package. |
-| `retired` | Retained for lineage but no longer current practice material. |
+| `validated-case` | Repeated use materially revised and stabilized the package. |
+
+Public `main` should normally contain only `case-ready` or more mature cases.
 
 ## Current cases
 

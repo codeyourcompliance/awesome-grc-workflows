@@ -9,6 +9,8 @@ bounded_action: Replace with one bounded work action
 decision_target: Replace with the narrow judgment or recommendation
 difficulty: intermediate
 estimated_time_minutes: 90
+required_tools:
+  - replace-with-required-tool-or-none
 deliverables:
   - replace-with-deliverable
 authority_boundaries:

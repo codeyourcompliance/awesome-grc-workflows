@@ -118,7 +118,12 @@ def main() -> int:
             "## Output basis",
             "## Assumption rules",
             "## Required tools",
+            "explicitly labelled `Synthetic Scenario`",
             "The reviewer guide and reference answer are separate artifacts",
+            "the preferred answer or preferred conditional answer",
+            "unsupported answers and why they fail",
+            "assumptions that materially change the result",
+            "evidence needed to resolve material uncertainty",
             "Technical capability, access, or automation does not create authorization",
             "A Role Relevance Map is a recommended enhancement",
             "must contain at least one relevant non-recruitment public resource",
@@ -168,6 +173,11 @@ def main() -> int:
             "## Authority boundary",
             "optional employer-agnostic role-family map",
         ],
+        "cases/_template/scenario.md": [
+            "# Synthetic Scenario",
+            "## Fictional organization",
+            "## Synthetic disclaimer",
+        ],
         "cases/_template/task-brief.md": [
             "## Required tools",
             "## Required deliverables",
@@ -191,7 +201,11 @@ def main() -> int:
         ],
         "cases/_template/reference-answer.md": [
             "one defensible response",
+            "## Preferred answer",
             "## Acceptable alternatives",
+            "## Unsupported answers",
+            "## Assumptions that change the result",
+            "## Evidence needed to resolve uncertainty",
         ],
     }
 
@@ -323,9 +337,11 @@ def main() -> int:
     print("OUTPUT_BASIS=explicit,inferred,case-designed")
     print("PRIVATE_TO_PUBLIC_GATE=required")
     print("PUBLIC_CASE_ID_INDEPENDENT=true")
+    print("SYNTHETIC_SCENARIO_LABEL=required")
     print("ASSUMPTION_RULES=required")
     print("AUTHORITY_OVERVIEW_REQUIRED=true")
     print("REVIEWER_GUIDE_MINIMUMS=required")
+    print("REFERENCE_ANSWER_DECISION_RANGE=required")
     print("ROLE_RELEVANCE_REQUIRED=false")
     print("ROLE_RELATIONSHIP_VOCABULARY=protocol-v2.1")
     print("REQUIRED_TOOLS_FIELD=required")

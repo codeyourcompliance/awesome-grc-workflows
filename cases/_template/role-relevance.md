@@ -6,11 +6,11 @@ Role relevance is employer-agnostic navigation and learning guidance. It does no
 
 Use only these relationship values:
 
-- `perform`
-- `contribute`
-- `review`
-- `consume`
-- `authorize/own`
+- `performs`
+- `contributes`
+- `reviews`
+- `consumes`
+- `authorizes/owns`
 
 Use only these basis values:
 
@@ -20,7 +20,7 @@ Use only these basis values:
 
 | Role family | Relationship | Basis | Case boundary |
 | --- | --- | --- | --- |
-| Replace with role family | perform / contribute / review / consume / authorize/own | evidence-observed / workflow-inferred / case-designed | Explain scope and authority limitation |
+| Replace with role family | performs / contributes / reviews / consumes / authorizes/owns | evidence-observed / workflow-inferred / case-designed | Explain scope and authority limitation |
 
 ## Authority note
 

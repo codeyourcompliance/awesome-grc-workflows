@@ -1,146 +1,132 @@
 # Awesome GRC Workflows
 
-Evidence-backed work tasks, required outputs, human boundaries, technical capabilities, external resources, and practice challenges across GRC, technology risk, audit, resilience, and compliance roles.
+Runnable synthetic GRC work-sample cases for practising bounded professional actions, producing reviewable deliverables, and learning where evidence, judgment, and authority must remain separate.
 
-> Status: early public curated index. Published entries describe recurring, publicly observable work. They do not prove a control failure, compliance gap, skill shortage, software buying intent, market size, or full automability.
+> Status: case-library foundation. No v2.1 public case has been released yet.
 
 ## What this repository is
 
-This repository organizes recurring work observed across GRC, technology risk, IT audit, operational resilience, third-party risk, cybersecurity governance, and compliance roles.
+Awesome GRC Workflows is an evidence-calibrated synthetic case library covering GRC, technology risk, IT audit, operational resilience, cybersecurity governance, third-party risk, AI governance, privacy, and compliance operations.
 
-It combines two public layers:
+The public product is a runnable case. Each case should let a learner:
 
-1. **Awesome curation** — employer evidence, official guidance, open-source tools, external articles, implementation cases, courses, labs, datasets, and external challenges.
-2. **Normalized workflow analysis** — bounded work tasks, required outputs, human boundaries, technical capabilities, automation boundaries, evidence limitations, and optional original synthetic challenges.
+- review realistic but synthetic records and evidence;
+- handle missing, stale, inconsistent, or ambiguous information;
+- perform one bounded work action;
+- produce a professional deliverable;
+- separate fact, inference, recommendation, and authorization;
+- compare the result with a rubric and reviewer guide.
 
-Each published workflow uses a common structure:
+Public cases do not expose the private evidence engine used to qualify and normalize candidate workflows.
 
-- **Observed and normalized work task** — the source wording and the bounded action derived from it.
-- **Required output** — an explicitly requested or cautiously inferred deliverable, record, analysis, or evidence package.
-- **Human boundary** — the judgment, authorization, risk acceptance, or sign-off that remains accountable to a person or authorized role.
-- **Technical capabilities** — employer-requested technologies, workflow-derived capabilities, and optional implementation choices kept separate.
-- **Automation boundary** — what may be collected, compared, validated, or reported automatically, and where authorization and accountability remain external to the automation.
-- **External resources** — non-recruitment material selected for learning, implementation context, inspection, or practice.
-- **Practice resources** — external exercises and optional original synthetic challenges kept separate.
+## Public case model
 
-## What this repository is not
+A complete case package normally contains:
 
-This is not:
+```text
+cases/<case-id>/
+├── README.md
+├── scenario.md
+├── task-brief.md
+├── inputs/
+├── templates/
+├── scoring-rubric.md
+├── reviewer-guide.md
+├── reference-answer.md
+├── role-relevance.md        # optional enhancement
+└── metadata.yaml
+```
 
-- a general directory of GRC products, certifications, books, or regulations;
-- a job-posting archive or market-wide census;
-- evidence of a skill shortage, inability to hire, market gap, workflow gap, or unmet demand;
-- a claim that every listed workflow should be automated;
-- evidence that an employer has a control deficiency;
-- evidence of software budget or purchasing intent;
-- a substitute for legal, regulatory, audit, or risk advice;
-- a collection of confidential employer procedures or production data.
+A case must remain understandable, completable, and reviewable without access to a private repository, hidden evidence, or maintainer-owned service.
 
-## Publication criteria
+## Private-to-public gate
 
-A workflow is published only when:
+Public case design based on project research begins only after the bounded workflow passes private qualification, an employer-agnostic normalized workflow and sanitized case-design packet exist, and explicit transfer approval is granted separately.
 
-1. substantially similar work is supported by at least three independent employers;
-2. the normalized task is narrow enough to describe operationally;
-3. required outputs are either explicitly supported or clearly marked as inferred;
-4. human authorization and accountability boundaries are stated or marked unresolved;
-5. alternative explanations have been considered;
-6. all supporting evidence is public and independently inspectable;
-7. source lifecycle information is recorded;
-8. first-principles and adversarial review are complete.
+Only approved sanitized content may inform the public case. Named employers, recruitment URLs, private identifiers, employer-group records, qualification reasoning, internal scoring, private paths, and transfer records do not belong in this repository.
 
-Independence is counted at employer level, not by number of links or postings. Multiple roles, reposts, job-board mirrors, locations, or business units from one employer count as one employer. Entities under the same ultimate corporate parent are conservatively counted as one employer unless independence is documented.
+## Required boundaries
 
-Practitioner discussions, standards, regulatory material, incident reports, open-source projects, and product documentation may clarify context, failure modes, terminology, or implementation options. They do not substitute for independent employer evidence when deciding whether a workflow qualifies for publication.
+Every case must:
 
-Each workflow should normally include at least one relevant non-recruitment external resource. Weak links are not added merely to satisfy a quota.
+- use a fictional organization and synthetic or safely constructed data;
+- use an independently assigned public case ID that does not reuse a private identifier;
+- train one bounded work action rather than an entire role or GRC function;
+- state included and excluded scope;
+- identify required tools and distinguish them from optional implementation choices;
+- define permitted assumptions, prohibited assumptions, and the response required when evidence is insufficient;
+- identify required learner deliverables;
+- distinguish evidence review, analysis, recommendation, approval, risk acceptance, legal interpretation, remediation closure, sign-off, and production change;
+- avoid granting authority merely because the learner can perform analysis or use technical tools;
+- label case-designed outputs and any role relationships as such;
+- include review criteria that reward justified uncertainty over unsupported certainty;
+- include a reviewer guide and a separate reference answer.
 
-## Independent value test
+Technical capability does not create approval rights, closure authority, risk-acceptance authority, legal authority, production authority, or accountability.
 
-Every page must pass this test:
-
-> After removing all maintainer-owned links, is the page still worth reading, saving, and citing?
-
-A page should still let readers understand the work, inspect the evidence, find external learning resources, and see the technical and accountability boundaries without using a maintainer-owned product or challenge.
-
-## Challenge maturity
-
-Challenge maturity describes the state of the synthetic exercise, not the strength of the workflow evidence.
+## Case maturity
 
 | Status | Meaning |
 | --- | --- |
-| `none` | No exercise has been proposed. |
-| `proposed` | A bounded exercise concept exists, but inputs or evaluation criteria remain incomplete. |
-| `challenge-ready` | A synthetic scenario, input set, required deliverables, and evaluation dimensions have been designed. |
-| `pilot-tested` | At least one external participant has completed the exercise and supplied feedback. |
-| `validated-pattern` | Repeated use and feedback have materially revised and stabilized the exercise and evaluation model. |
+| `proposed` | Only the case concept exists. |
+| `design-ready` | Scenario, task, and input design are complete. |
+| `case-ready` | Inputs, assumption rules, required tools, deliverables, templates, scoring, complete reviewer guidance, reference answer, authority boundaries, and required public resources are complete. |
+| `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
+| `validated-case` | Repeated use and material revision have stabilized the case package. |
 
-A published workflow may have no challenge. A polished challenge does not strengthen the underlying workflow evidence.
+Public `main` should normally contain only `case-ready` or more mature cases. A private workflow qualification or prepared design packet does not automatically make a public case `case-ready`.
 
-## Workflow domains
+## Claims this repository does not make
 
-The initial scope includes:
+A case does not prove:
 
-- access review, IAM, and privileged access;
-- technology control testing;
-- evidence collection, validation, lineage, and freshness;
-- continuous control monitoring and configuration drift;
-- operational resilience, BCP, and disaster recovery exercises;
-- incident evidence and post-incident review;
-- remediation validation and control retesting;
-- third-party technology risk;
-- cloud and change-control assurance;
-- AI governance and model-risk operations.
-
-## Published workflows
-
-- [Validate whether completed remediation actions effectively address identified issues](workflows/remediation-effectiveness-validation.md) — post-remediation effectiveness judgment supported by four independent employer groups; challenge status `none`.
-
-See the [workflow index](workflows/README.md) for current entries and publication guidance.
+- that a named employer uses the synthetic process;
+- that an employer has a control weakness;
+- current hiring demand, market size, skill shortage, unmet demand, budget, or procurement intent;
+- that one role universally owns the work;
+- that a named technology is universally required;
+- that the task is fully automatable;
+- that completing the case creates professional authorization or complete role competence.
 
 ## Repository structure
 
 ```text
 .
 ├── README.md
-├── CONTRIBUTING.md
 ├── METHODOLOGY.md
+├── CONTRIBUTING.md
 ├── LICENSE
-├── schemas/
-│   └── workflow-entry.schema.yaml
-├── workflows/
+├── cases/
 │   ├── README.md
-│   ├── _template.md
-│   └── remediation-effectiveness-validation.md
+│   └── _template/
+├── schemas/
+│   ├── case-entry.schema.yaml
+│   └── workflow-entry.schema.yaml
 ├── resources/
 │   └── README.md
+├── workflows/
+│   └── legacy employer-evidence-centred entries
 └── challenges/
-    └── README.md
+    └── legacy challenge guidance
 ```
 
-- `workflows/` contains evidence-backed normalized work actions.
-- `resources/` defines and curates external resources that provide independent public value.
-- `challenges/` distinguishes external practice resources from original synthetic challenges.
+- `cases/` is the active public product surface.
+- `schemas/case-entry.schema.yaml` defines public case metadata.
+- `resources/` contains useful public non-recruitment resources.
+- `workflows/`, `challenges/`, and `schemas/workflow-entry.schema.yaml` are retained as pre-v2.1 legacy material until separately migrated or retired.
 
-Unsupported entries and empty categories are not added merely to make the repository appear complete.
+## Current public cases
 
-## Entry requirements
+No v2.1 case is published yet. New cases must use the package structure and review gates described in [cases/README.md](cases/README.md).
 
-A published workflow entry must:
+## Legacy content
 
-1. describe a concrete work action rather than a broad job title;
-2. be supported by at least three independent employers;
-3. distinguish source wording from the normalized task;
-4. distinguish explicitly observed outputs from outputs inferred during normalization;
-5. state where accountable human judgment or authorization remains necessary, or mark the authority as unresolved;
-6. distinguish employer-requested technologies, workflow-derived capabilities, and optional implementation choices;
-7. distinguish employer evidence, contextual evidence, external resources, and inferred automation opportunity;
-8. retain source dates, status, minimal supporting signals, and independence notes;
-9. label all invented organizations, records, policies, systems, errors, and datasets as synthetic;
-10. avoid reproducing confidential, personal, production, or commercial information.
+The existing remediation-effectiveness workflow remains available as a historical pre-v2.1 entry. It is not a v2.1 runnable case and should not be used as the template for new contributions. See [workflows/README.md](workflows/README.md).
 
-See [METHODOLOGY.md](METHODOLOGY.md) for the evidence model and [CONTRIBUTING.md](CONTRIBUTING.md) for submission rules.
+## Contributing
+
+Read [METHODOLOGY.md](METHODOLOGY.md) and [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a case, template change, correction, or legacy migration.
 
 ## License
 
-Unless a file states otherwise, original repository content is licensed under the [Creative Commons Attribution 4.0 International Public License](LICENSE). Third-party source material remains subject to its original rights and is not relicensed by this repository.
+Unless a file states otherwise, original repository content is licensed under the [Creative Commons Attribution 4.0 International Public License](LICENSE). Third-party material remains subject to its original rights and is not relicensed by this repository.

@@ -1,104 +1,217 @@
 # Contributing
 
-Contributions should improve evidence quality, clarity, curation, or practical usefulness. Volume alone is not a goal.
+Contributions should improve the completeness, realism, reviewability, or safety of runnable synthetic GRC work-sample cases. Volume alone is not a goal.
 
-## Before submitting
+## Active submission types
 
-Confirm that the proposed public entry:
+### New case
 
-- describes one bounded work action;
-- is supported by at least three independent employers;
-- distinguishes employer evidence from contextual evidence and external resources;
-- identifies whether each required output is explicit or inferred;
-- separates employer-requested technologies, workflow-derived capabilities, and optional implementation choices;
-- states the human judgment, authorization, or approval boundary, or marks it unresolved;
-- distinguishes observed evidence from normalization, automation inference, and synthetic exercise design;
-- uses public, independently accessible sources;
-- records observation dates, last-checked dates, source status, and independence notes;
-- contains no confidential, personal, production, or commercial information;
-- does not infer a control failure, skill shortage, inability to hire, market gap, workflow gap, unmet demand, software budget, procurement intent, or universal workflow from hiring evidence;
-- labels invented organizations, policies, systems, errors, and datasets as synthetic;
-- remains useful after removing maintainer-owned links.
+Use `cases/_template/`. A new case must train one bounded work action and include the complete package required for its proposed maturity state.
 
-## Submission types
+### Case correction
 
-### New workflow
+Correct an inconsistency, ambiguity, unsafe authority assumption, unsupported claim, broken resource, scoring defect, or reference-answer error.
 
-Use `workflows/_template.md` and complete all required sections. New workflow files must already meet the publication threshold.
+### Case improvement
 
-### Evidence update
+Improve synthetic inputs, deliverable templates, reviewer guidance, accessibility, metadata, or pilot-feedback treatment without changing the bounded action.
 
-Add an independent employer, add or replace a qualifying source, update source status, add contextual evidence, correct a date, or narrow a claim.
+### Template or schema change
 
-### Resource update
+Propose a reusable structural improvement. Explain how existing and future cases are affected.
 
-Add a high-quality external resource only when its relevance is explained. Do not add weak links to satisfy a quota or promotional links that do not provide independent value.
+### Legacy migration
 
-### Challenge proposal
+Migrate a pre-v2.1 workflow or challenge only through a separate reviewed change. Do not copy private employer research into the public repository.
 
-A proposal should define the scenario, inputs, required deliverables, evaluation dimensions, likely false positives, uncertainties, and authorization boundary. A narrative prompt alone is not sufficient.
+## Qualification and transfer prerequisite
 
-### Correction or withdrawal
+A public case package must not be used to bypass private workflow qualification.
 
-Open an issue or pull request when an entry is stale, duplicated, unsupported, misleading, based on copied sources, or no longer meets the publication threshold.
+Before public case design begins, maintainers must confirm that:
 
-## Source handling
+- the bounded workflow passed private qualification;
+- an employer-agnostic normalized workflow exists;
+- a sanitized case-design packet was prepared;
+- explicit transfer approval was granted as a separate action; and
+- public design uses only the approved sanitized content.
 
-Prefer official employer pages for employer evidence. Use attributable job-board copies only when the original is unavailable. Use official documentation, standards bodies, regulators, first-person practitioner material, incident reports, open-source documentation, and product documentation as contextual evidence or external resources.
+Do not place private evidence, named employers, recruitment URLs, private identifiers, employer-group records, qualification reasoning, internal scoring, commercial priorities, buyer hypotheses, contact research, private paths, or transfer records in the public repository.
 
-Do not copy substantial portions of job descriptions or articles. Quote only the minimum necessary phrase and provide a link, observation date, last-checked date, source class, status, and concise interpretation.
+An external contributor may propose a bounded concept for consideration, but a public case PR must not proceed until maintainers have routed the workflow through the same qualification and transfer controls. The public PR should state that the prerequisite was confirmed without exposing private details.
 
-Count independence at employer level:
+## Public case identity
 
-- a job-board mirror and the original employer posting count as one source record;
-- multiple postings, roles, locations, or business units from one employer count as one employer;
-- entities under one ultimate corporate parent are conservatively counted as one employer unless independence is documented with public evidence.
+Assign a new public case ID independently. Do not reuse a private candidate, source, employer, employer-group, packet, preparation, or transfer identifier.
 
-When a source becomes unavailable, mark it accordingly and reassess the publication threshold. Do not silently continue treating a dead link as active evidence.
+The public repository must not expose a reversible mapping between a public case ID and private records.
 
-## Publication requirements
+## Before submitting a case
 
-A new workflow requires:
+Confirm that the proposal:
 
-- at least three independent employers;
-- a sufficiently stable task, output, and human boundary;
-- explicit and inferred outputs kept separate;
-- documented alternative explanations;
-- public evidence that allows independent inspection;
-- at least one relevant non-recruitment external resource, unless its absence is justified;
-- completed first-principles and adversarial review.
+- trains one bounded work action;
+- uses a fictional organization and synthetic or safely constructed data;
+- is not a lightly renamed version of a real employer or event;
+- uses an independently assigned public case ID;
+- states included and excluded scope;
+- contains sufficient but imperfect inputs;
+- requires at least one professional deliverable;
+- states required tools, accepted equivalents, and optional tools separately;
+- defines permitted assumptions, prohibited assumptions, and what to do when evidence is insufficient;
+- includes a scoring rubric, reviewer guide, and reference answer as separate artifacts;
+- separates fact, inference, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change;
+- does not grant authority merely because the learner can perform analysis or use technical tools;
+- keeps output basis as `explicit`, `inferred`, or `case-designed`;
+- labels role relationships as `evidence-observed`, `workflow-inferred`, or `case-designed` when a role map is included;
+- remains completable without private evidence or maintainer-owned services;
+- contains no confidential, personal, production, employer-internal, or commercially sensitive information;
+- avoids unsupported market, hiring, budget, procurement, shortage, gap, universal-technology, or full-automation claims.
 
-Contextual evidence and external resources may strengthen interpretation and usefulness but do not substitute for independent employers.
+## Required package
 
-## Challenge maturity changes
+A `case-ready` submission normally includes:
 
-Challenge maturity is independent of workflow evidence:
+```text
+cases/<case-id>/
+├── README.md
+├── scenario.md
+├── task-brief.md
+├── inputs/
+├── templates/
+├── scoring-rubric.md
+├── reviewer-guide.md
+├── reference-answer.md
+├── metadata.yaml
+└── role-relevance.md        # optional enhancement
+```
 
-- `none` to `proposed`: a bounded exercise concept exists;
-- `proposed` to `challenge-ready`: synthetic inputs, required deliverables, and evaluation dimensions are complete;
-- `challenge-ready` to `pilot-tested`: external completion and feedback are documented;
-- `pilot-tested` to `validated-pattern`: repeated feedback has caused material revision and stabilization.
+Additional files may be added when they materially help the learner or reviewer. Do not add empty sections merely to look complete.
 
-Maintainers may downgrade challenge status or withdraw a workflow when evidence expires or assumptions prove unstable.
+The README must state the public case ID, bounded action, learning objective, required tools, authority boundary, required deliverables, public resources, and known limitations.
 
-## Style
+The task brief must state permitted and prohibited assumptions and how the learner should respond when evidence is insufficient.
 
-Use plain language. Prefer specific actions such as "reconcile HR and directory records" over broad labels such as "perform IAM governance."
+The README, task brief, and metadata must state required tools. If no specialized tool is needed, say so explicitly. Do not convert an optional implementation choice or a technology observed in one source into a universal requirement.
 
-Separate facts, source paraphrases, normalization choices, inference, and challenge-design decisions. Avoid marketing language, unsupported market-size claims, gap claims without separate evidence, claims of full automation, and claims that a named technology is universally required.
+A Role Relevance Map is recommended but optional. Its absence does not block `case-ready` when the core case is otherwise complete. Removing it must not make the task unusable or unreviewable.
+
+## Synthetic data rules
+
+Synthetic material must be independently fictional.
+
+Do not:
+
+- replace a real employer name with a generic label while preserving its distinctive facts;
+- copy real customer, employee, incident, audit, risk, policy, ticket, system, or control data;
+- include personal information;
+- reproduce substantial copyrighted source material;
+- imply that a named organization uses the scenario, process, controls, or authority model.
+
+Every case must include the standard synthetic disclaimer from `METHODOLOGY.md`.
+
+## Deliverables and evaluation
+
+Required deliverables should resemble professional work products, not quiz answers.
+
+A rubric must:
+
+- use observable criteria;
+- define weights or scoring ranges;
+- identify critical errors;
+- allow defensible alternative conclusions;
+- reward traceability and justified uncertainty;
+- penalize invented facts and authority overreach.
+
+A reviewer guide must explain:
+
+- mandatory observations;
+- designed non-issues or false positives;
+- intentional ambiguities;
+- acceptable answer ranges;
+- blocking errors and any score cap or automatic-fail treatment;
+- common mistakes;
+- minimum passing evidence beyond a numerical score;
+- professional-judgment areas;
+- authority checks;
+- partial credit and escalation conditions.
+
+A reference answer must distinguish facts, assumptions, unresolved questions, findings, recommendations, and authorized decisions. It is one defensible answer, not the only answer, and should identify acceptable alternatives where appropriate.
+
+## Authority and automation
+
+State separately who prepares evidence, analyzes or tests, recommends, approves, accepts exceptions or residual risk, interprets legal or regulatory requirements, signs off, closes remediation, and performs production changes.
+
+Technical capability, system access, or automation does not create authority or accountability.
+
+Bounded automation may support read-only collection, normalization, checks, comparison against authorized criteria, traceability, exception identification, and draft reporting. Approval, closure, risk acceptance, legal determination, remediation execution, production changes, overrides, and final sign-off require separate authority or controls.
+
+## External resources
+
+A `case-ready`, `pilot-tested`, or `validated-case` submission must include at least one relevant non-recruitment public resource. A `proposed` or `design-ready` submission may omit it while design is incomplete.
+
+For each resource, explain its relevance and limitation. Maintainer-owned links are optional and must not be required to complete or review the case.
+
+## Case maturity
+
+Use only these values:
+
+- `proposed` — only the case concept exists;
+- `design-ready` — scenario, task, and input design are complete;
+- `case-ready` — inputs, deliverables, output format, scoring, reviewer guidance, authority boundary, required tools, required external resource, and independent review are complete;
+- `pilot-tested` — at least one independent participant completed the case and supplied feedback;
+- `validated-case` — repeated use and material revision have stabilized the case.
+
+Public `main` should normally contain only `case-ready` or more mature cases.
 
 ## Pull requests
 
-A pull request should explain:
+Use a focused branch and open a Draft PR by default.
 
-- what changed;
-- which independent employers support the workflow;
-- which qualifying sources support each employer;
-- which contextual sources and external resources were used;
-- what is explicit and what is inferred;
-- how technologies and capabilities were classified;
-- what remains uncertain;
-- whether source lifecycle or challenge maturity changes;
-- how first-principles and adversarial review were performed.
+The PR body should explain:
+
+- the bounded work action;
+- that the private qualification and explicit transfer prerequisite was confirmed, without exposing private details;
+- that the public case ID was independently assigned;
+- what is synthetic and how fictional independence was checked;
+- package contents, required tools, assumption rules, and required deliverables;
+- authority and adjacent-workflow boundaries;
+- output-basis treatment;
+- rubric, reviewer-guide, and reference-answer design;
+- relevant public resources;
+- validation performed;
+- first-principles and adversarial findings;
+- known limitations;
+- case maturity requested;
+- explicit non-actions, including whether no Ready transition, merge, or branch deletion occurred.
+
+Inspect the complete diff and cross-file consistency before requesting review. Do not mix unrelated cases or repository cleanup into the same PR.
+
+## Review gates
+
+No stage automatically authorizes the next.
+
+```text
+Private candidate review
+→ private workflow qualification
+→ employer-agnostic normalized workflow
+→ sanitized case-design packet
+→ explicit transfer approval
+→ proposed public case
+→ design-ready package
+→ case-ready validation
+→ independent review
+→ explicit Ready approval
+→ explicit merge approval
+→ pilot testing
+```
+
+A case must remain below `case-ready` until scenario, inputs, task brief, assumption rules, required tools, deliverables, output format, rubric, reviewer guide, reference answer, metadata, authority boundaries, external resource, and cross-file consistency are complete.
+
+## Style
+
+Use plain, precise language. Separate observed case facts, assumptions, inference, recommendations, case-design decisions, and unresolved questions.
+
+Prefer a smaller number of defensible, usable cases over shallow bulk generation.
 
 By contributing original material, you agree that it may be distributed under the repository license. Do not submit material you do not have the right to share.

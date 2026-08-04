@@ -2,232 +2,316 @@
 
 ## Objective
 
-The repository identifies recurring professional work in GRC, technology risk, audit, resilience, and compliance, then represents sufficiently stable patterns as reusable workflow descriptions and optional synthetic practice challenges.
+Awesome GRC Workflows publishes evidence-calibrated synthetic work-sample cases. The public repository teaches one bounded professional action at a time through realistic inputs, required deliverables, explicit authority boundaries, and review criteria.
 
-The unit of analysis is a **work action**, not a job posting, employer, title, product, regulation, technology, presumed skill gap, market gap, or software opportunity.
+The public case is not employer research, a job-posting archive, a market-demand claim, or a representation of any named organization’s internal process.
 
-The repository combines two public layers:
+## Three-layer separation
 
-1. **Awesome curation** — employer evidence, official guidance, open-source tools, external articles, implementation cases, courses, labs, datasets, and external challenges.
-2. **Normalized analysis** — bounded work tasks, required outputs, human boundaries, technical capabilities, automation boundaries, evidence limitations, and optional original synthetic challenges.
+The project keeps these layers separate:
 
-These layers must remain useful and understandable without maintainer-owned links.
+```text
+Private Evidence Engine
+→ Normalized Bounded Workflow
+→ Public Synthetic Case Package
+```
 
-## First-principles model
+The private layer may contain named sources, employer-group reconciliation, qualification reasoning, internal identifiers, and unpublished research notes. None of that material is automatically public.
 
-A published workflow keeps the following objects separate:
+The normalized workflow is employer-agnostic. It defines the trigger, inputs, action, decision target, outputs, exclusions, failure modes, authority boundaries, capabilities, automation opportunities, and possible role-family relationships.
 
-1. **Employer evidence** — public employer sources showing that someone is expected to perform work.
-2. **Normalized work action** — the narrow action extracted from those sources.
-3. **Output claim** — a deliverable explicitly requested by a source or cautiously inferred during normalization.
-4. **Human boundary** — accountable judgment or authorization supported by the evidence or marked unresolved.
-5. **Technical capability** — an employer-requested technology, workflow-derived capability, or optional implementation choice.
-6. **Automation hypothesis** — a bounded engineering inference about collection, comparison, validation, or reporting.
-7. **External resource** — public material selected for learning, implementation context, or practice.
-8. **Synthetic exercise** — invented data and context used to practise the work.
+The public layer independently designs a fictional organization, synthetic evidence package, professional deliverables, rubric, reviewer guide, and reference answer.
 
-None of these objects should silently stand in for another.
+No stage automatically authorizes the next.
 
-## Source classes
+## Private-to-public transfer gate
 
-### Employer evidence
+Public case design based on private research may begin only when:
 
-Qualifying employer evidence includes:
+1. the bounded workflow has passed private qualification;
+2. an employer-agnostic normalized workflow exists;
+3. a sanitized case-design packet has been prepared;
+4. explicit transfer approval has been granted as a separate action; and
+5. only the approved sanitized content is used in public design.
 
-1. official employer career pages;
-2. employer-authored public job descriptions;
-3. a job-board copy when the original is unavailable and employer attribution is clear.
+The public repository must not contain named employers, recruitment URLs, private identifiers, employer-group records, private qualification reasoning, internal scoring, commercial priorities, buyer hypotheses, contact research, private paths, or transfer records.
 
-A mirror and its original count as one source record. Multiple postings from the same employer may provide corroboration and detail, but they do not increase the independent-employer count.
+An external case concept does not bypass this sequence. Maintainers must route the bounded workflow through the same private qualification and sanitized-transfer controls before a public case package is designed or submitted.
 
-For publication, independence is counted at employer level:
+## Public case identity
 
-- reposts, role variants, locations, and business units under one employer count as one employer;
-- entities under the same ultimate corporate parent are conservatively counted as one employer;
-- an exception requires public evidence that hiring authority and operating context are genuinely independent.
+A public case ID must be independently assigned. It must not reuse a private candidate, source, employer, employer-group, packet, preparation, or transfer identifier.
 
-Employer evidence may support claims about requested work, explicitly requested outputs, named technologies, responsibilities, and stated approval boundaries. It does not by itself establish a control weakness, skill shortage, inability to hire, market gap, workflow gap, unmet demand, software budget, or procurement intent.
+The public ID supports public package identity only. It must not create a reversible mapping to private records in the public repository.
 
-### Contextual evidence
+## Unit of design
 
-Contextual evidence may explain constraints, failure modes, terminology, implementation options, or capabilities. Examples include:
+The unit is one bounded work action.
 
-1. public practitioner discussions and implementation retrospectives;
-2. official standards, regulatory publications, and framework documentation;
-3. official product documentation describing supported capabilities and limitations;
-4. public incident, audit, enforcement, or post-incident material;
-5. open-source projects and technical documentation.
+Do not use a job title, framework, regulation, product, technology, department, broad responsibility, complete GRC function, presumed skill gap, market gap, or software opportunity as the case unit.
 
-Contextual evidence does not substitute for independent employer evidence when deciding publication eligibility.
+A bounded action should have:
 
-### External resources
+- a recognisable trigger;
+- defined inputs;
+- an operational action;
+- a decision target;
+- reviewable outputs;
+- clear exclusions;
+- identifiable failure modes;
+- an authority boundary.
 
-External resources give the page independent practical value. They may include official guidance, open-source tools, articles, cases, courses, labs, datasets, and external challenges.
+## Public case requirements
 
-A resource should be included because it materially helps the reader understand, inspect, implement, or practise the work. Do not add weak links merely to meet a quota. Maintainer-owned resources are optional and must not be necessary for the page to remain useful.
+A `case-ready` package includes:
 
-Search-result snippets alone are not sufficient evidence. Sources should be independently accessible, dated, and interpreted narrowly.
+1. **README** — purpose, independently assigned public case ID, bounded action, maturity, required tools, authority boundary, package map, and synthetic disclaimer.
+2. **Synthetic scenario** — a file explicitly labelled `Synthetic Scenario` that defines the fictional organization, operating context, roles, systems, dates, and relevant constraints.
+3. **Task brief** — learner role, work action, included and excluded scope, required tools, assumption rules, required deliverables, and submission format.
+4. **Inputs** — sufficient but imperfect synthetic evidence.
+5. **Templates** — at least one deliverable template or a clearly defined output format.
+6. **Scoring rubric** — observable criteria, weights, critical errors, and maturity anchors.
+7. **Reviewer guide** — mandatory observations, false positives, intentional ambiguities, blocking errors, common mistakes, minimum passing evidence, professional-judgment areas, partial credit, and authority checks.
+8. **Reference answer** — one defensible response or clearly defined defensible-answer range that identifies the preferred answer, acceptable alternatives, unsupported answers, result-changing assumptions, evidence needed to resolve uncertainty, facts, unresolved questions, findings, recommendations, and reserved decisions.
+9. **Human authority boundary** — clear separation of analysis, recommendation, approval, risk acceptance, legal interpretation, sign-off, closure, and production change.
+10. **Metadata** — machine-readable status and package information, including required tools.
+11. **External resource** — at least one relevant non-recruitment public resource with its relevance and limitation explained.
 
-## Publication threshold
+A narrative prompt alone is not a runnable case.
 
-A workflow may be published only when:
+A Role Relevance Map is a recommended enhancement, not an absolute `case-ready` requirement. Removing role relevance must not make the core task unusable or unreviewable.
 
-- substantially similar work appears across at least three independent employers;
-- the normalized task is sufficiently stable and bounded;
-- required outputs are explicit or transparently inferred;
-- the human boundary can be stated without inventing organizational authority, or is marked unresolved;
-- plausible alternative explanations have been considered;
-- the published entry contains enough public evidence for independent inspection;
-- first-principles and adversarial review are complete.
+## Synthetic independence
 
-The three-employer threshold is a repository publication rule, not a statistical market conclusion.
+Public organizations, systems, records, authority structures, incidents, policies, dates, and datasets must be fictional or safely constructed.
 
-Alternative explanations may include generic copied job language, a temporary transformation programme, regulatory timing, vendor-specific staffing, bundled responsibilities, or repeated publication within one corporate group.
+The scenario file must be explicitly labelled `Synthetic Scenario` at the top. A disclaimer elsewhere in the package does not replace the scenario-level label.
 
-## Core analytical fields
+Do not pseudonymize a real employer as a “leading bank,” “major consultancy,” or similar label. Do not preserve a real organization’s distinctive combination of facts while changing only its name.
 
-### Observed work task
+Every case must state:
 
-A bounded action that roles are expected to perform, such as validating remediation evidence or reviewing privileged access.
+> This case uses a fictional organization and synthetic or safely constructed data. It does not represent any named employer’s internal process, systems, controls, authority structure, or records.
 
-Keep source wording separate from the normalized task. Document material normalization choices.
+## Evidence package design
 
-### Required outputs
+Inputs should be sufficient to perform the bounded action but imperfect enough to require professional reasoning.
 
-The observable deliverables expected from the task, such as an exception register, control-test record, closure package, review report, or evidence bundle.
+Where relevant, include:
 
-Each output is labelled as:
+- at least one material issue;
+- at least one plausible false positive or non-issue;
+- at least one missing, stale, inconsistent, ambiguous, duplicated, or unsupported item;
+- enough metadata to assess scope, provenance, date, owner, version, and traceability;
+- explicit criteria where the learner is expected to compare evidence against them;
+- clear limits where criteria or authority are unresolved.
 
-- `explicit` — directly requested or named in qualifying employer evidence;
-- `inferred` — derived during normalization and therefore subject to revision.
+Do not introduce noise merely to make the case difficult. Every ambiguity should test a stated capability or review criterion.
 
-An inferred output must never be presented as an observed employer requirement.
+## Output basis
 
-### Human boundary
+Keep these output-basis classes separate:
 
-The point where accountable judgment or authorization remains with an identified or reasonably bounded role. Examples include approving an exception, accepting residual risk, determining regulatory adequacy, approving remediation closure, signing a control conclusion, or authorizing a production change.
+- `explicit` — an output directly named or requested in qualifying private evidence;
+- `inferred` — an output derived from the bounded workflow logic but not directly named in qualifying evidence;
+- `case-designed` — an output created to make the synthetic exercise usable and reviewable.
 
-Absence of evidence is not evidence that a decision can be delegated. When authority is unclear, the entry records the uncertainty rather than inventing an owner.
+The public case may use the normalized output class without exposing named-employer evidence. It must not present an `inferred` or `case-designed` output as an observed employer requirement.
 
-### Technical capabilities
+These output-basis values are distinct from Role Relevance basis values. Role relationships use `evidence-observed`, `workflow-inferred`, or `case-designed`.
 
-Separate three categories:
+Public learner deliverables are normally `case-designed`, even where their structure is informed by an explicit or inferred normalized output class.
 
-- **employer-requested technology** — explicitly named in qualifying employer evidence;
-- **workflow-derived capability** — reasonably required by the normalized work;
-- **optional implementation choice** — one possible technical approach.
+## Assumption rules
 
-A technology named in one posting is evidence that the employer requested it, not proof that every implementation requires it.
+Every task brief must define:
 
-### Automation boundary
+- assumptions the learner is permitted to make;
+- assumptions the learner is prohibited from making;
+- how assumptions must be labelled and justified;
+- what the learner should do when evidence is insufficient.
 
-The entry may identify bounded automation for read-only collection, normalization, comparison, completeness or freshness checks, metadata validation, exception identification, and reporting.
+A learner must not invent approvals, criteria, dates, evidence, system state, ownership, materiality, or authority. Missing evidence must not be treated as satisfactory evidence. Where uncertainty is material, the learner should identify the evidence needed and use a conditional recommendation or escalation rather than force a final conclusion.
 
-It separately identifies:
+## Human authority boundary
 
-- actions that change production state;
-- decisions requiring authorization;
-- risk acceptance or legal or regulatory interpretation;
-- remediation execution;
-- unresolved accountability.
+Identify separately who may:
 
-These actions are not universally prohibited from automation. Automation capability does not itself create authority, approval rights, or accountability.
+- prepare or supply evidence;
+- perform analysis or testing;
+- recommend;
+- approve;
+- accept exceptions or residual risk;
+- interpret legal or regulatory requirements;
+- sign off conclusions;
+- close remediation;
+- execute production changes.
 
-## Source lifecycle
+Technical capability, access, or automation does not create authorization, approval rights, legal authority, risk-acceptance authority, production authority, or accountability.
 
-Each employer source should retain:
+When accountability is not established, mark it unresolved or design a clearly fictional authorized role. Do not silently grant the learner final authority.
 
-- employer and role title;
-- public URL;
-- observation date;
-- last-checked date;
-- minimal supporting paraphrase or quotation;
-- independence note;
-- source status.
+## Automation boundary
 
-Suggested source statuses are `active`, `unavailable`, and `replaced`.
+Suitable bounded automation may include:
 
-When a source becomes unavailable:
+- read-only collection;
+- normalization;
+- metadata, completeness, and freshness checks;
+- comparison against authorized machine-readable criteria;
+- duplicate or contradiction detection;
+- traceability generation;
+- exception identification;
+- draft workpapers and reporting.
 
-1. do not silently treat it as active;
-2. retain only the limited observation that the published record can still support;
-3. mark the source status and last-checked date;
-4. reassess whether the remaining public evidence still meets the publication threshold;
-5. narrow or withdraw claims that are no longer independently inspectable.
+Approval, closure, risk acceptance, legal determination, remediation execution, production changes, overrides, and final sign-off require separately defined authority or controls.
 
-An unavailable source does not create a new employer or strengthen recurrence.
+Do not claim either universal full automation or universal non-automability.
 
-## Challenge maturity
+## Role relevance
 
-Challenge maturity is tracked separately from workflow evidence:
+A case may identify employer-agnostic role families that may:
 
-- `none`: no exercise proposed;
-- `proposed`: a scenario concept exists, but inputs or evaluation remain incomplete;
-- `challenge-ready`: bounded synthetic inputs, deliverables, and evaluation dimensions exist;
-- `pilot-tested`: at least one external participant has completed the exercise and supplied feedback;
-- `validated-pattern`: repeated use has materially revised and stabilized the exercise and evaluation model.
+- `performs`;
+- `contributes`;
+- `reviews`;
+- `consumes`;
+- `authorizes/owns`.
 
-A published workflow can have no challenge. A polished challenge does not strengthen the underlying workflow evidence.
+Where used, classify the relationship as:
 
-## Challenge construction
+- `evidence-observed`;
+- `workflow-inferred`;
+- `case-designed`.
 
-A synthetic challenge distinguishes between:
+Role relevance supports navigation and learning. It does not establish universal job ownership, current hiring demand, professional authorization, or approval authority. Role relevance completeness is separate from case maturity.
 
-- **employer evidence** — public evidence that employers request the work;
-- **contextual constraints** — public material used to make the exercise plausible;
-- **external practice resources** — third-party labs or exercises selected for relevance;
-- **original synthetic exercise** — invented organizations, records, systems, policies, errors, and expected deliverables.
+## Required tools
 
-Every original challenge must state that it does not represent any named employer's internal process.
+Every case overview must state the tools required to complete the work.
 
-A useful challenge should contain:
-
-- a bounded role and task;
-- sufficient but imperfect inputs;
-- at least one genuine issue;
-- at least one plausible false positive;
-- at least one uncertainty, contradiction, or missing item;
-- explicit required deliverables;
-- evaluation dimensions rather than a single simplistic answer;
-- a stated authorization and accountability boundary.
+- If no specialized tool is required, state `none` or describe the ordinary editor or spreadsheet capability needed.
+- Distinguish required tools from accepted equivalents and optional implementation choices.
+- Do not convert a technology observed in one source or preferred by a maintainer into a universal requirement.
+- A product or version may be mandatory only when the synthetic task genuinely depends on it and the requirement is disclosed before the learner starts.
 
 ## Evaluation model
 
-Evaluation should consider:
+A rubric should assess observable work quality rather than keyword matching.
 
-- detection of material issues;
-- evidence reasoning and traceability;
-- control of false positives;
-- handling of missing or contradictory evidence;
-- completeness of required deliverables;
-- respect for authorization and accountability boundaries;
+Common dimensions include:
+
+- scope discipline;
+- material issue detection;
+- evidence-to-requirement traceability;
+- handling of missing or contradictory information;
+- false-positive control;
+- fact, inference, and recommendation separation;
+- completeness and usability of the deliverable;
+- authority-boundary discipline;
+- communication quality;
 - verification of AI-assisted output where AI is used.
 
-A response may be acceptable without reaching a final decision when available evidence is insufficient. Unsupported certainty should score worse than a justified request for additional evidence.
+A justified request for additional evidence may be stronger than an unsupported final conclusion.
 
-## Claims that are not permitted
+Critical errors may include:
 
-An entry must not claim, solely from hiring evidence, that:
+- inventing facts or evidence;
+- treating a recommendation as approval;
+- accepting risk without authority;
+- making an unsupported legal conclusion;
+- changing production state;
+- claiming closure despite a material unresolved deficiency;
+- exposing confidential or personal data.
 
-- an employer has a control failure;
-- a skill shortage exists;
+## Reviewer guide and reference answer
+
+The reviewer guide and reference answer are separate artifacts.
+
+The reviewer guide must explain:
+
+- what must be found;
+- designed non-issues or false positives;
+- which ambiguities are intentional;
+- what may reasonably vary;
+- what evidence would support alternative conclusions;
+- blocking errors and any score cap or automatic-fail treatment;
+- common mistakes;
+- minimum passing evidence beyond a numerical score;
+- where professional judgment may reasonably differ;
+- which authority overreaches are critical;
+- how partial credit is assigned.
+
+The reference answer is one defensible response, not the only acceptable response. For a judgment-bearing case, it must identify:
+
+- the preferred answer or preferred conditional answer;
+- acceptable alternatives and their required evidence or reasoning;
+- unsupported answers and why they fail;
+- assumptions that materially change the result;
+- evidence needed to resolve material uncertainty;
+- established facts, unresolved questions, material findings, recommendations, and decisions reserved for authorized roles.
+
+## External resources and public value
+
+A `case-ready`, `pilot-tested`, or `validated-case` package must contain at least one relevant non-recruitment public resource. A `proposed` or `design-ready` package may omit it while design is incomplete.
+
+For each included resource, explain:
+
+- what it helps the learner understand or perform;
+- what it does not establish;
+- why it is not merely decorative.
+
+After removing all maintainer-owned links, can a user still understand the scenario, inspect the inputs, complete the task, produce a deliverable, and apply the review criteria?
+
+If not, the case is not ready.
+
+## Case maturity and release gates
+
+| Status | Meaning |
+| --- | --- |
+| `proposed` | Only the case concept exists. |
+| `design-ready` | Scenario, task, and input design are complete. |
+| `case-ready` | Inputs, deliverables, output format, scoring, reviewer guidance, authority boundaries, required tools, external resources, and independent review are complete. |
+| `pilot-tested` | At least one independent participant completed the case and supplied feedback. |
+| `validated-case` | Repeated use and material revision have stabilized the package. |
+
+Public `main` should normally contain only `case-ready` or more mature cases.
+
+A case must not be marked `case-ready`, published, or merged merely because a private candidate is qualified or a design packet exists. Explicit transfer approval and complete public case review remain separate gates. Case maturity does not strengthen employer evidence.
+
+## Prohibited claims
+
+Do not claim from a case, private qualification, or role map alone that:
+
+- a named employer has a weakness or uses the synthetic process;
+- current hiring demand exists;
+- a market, skill, workflow, or software gap exists;
 - employers cannot find qualified people;
-- a market, workflow, or software gap exists;
-- unmet demand exists;
 - budget or procurement intent exists;
-- a task is fully automatable;
-- a workflow is universal;
-- a technology named in a posting is necessary for every implementation;
-- a synthetic challenge reflects a named employer's internal process.
+- one technology or workflow is universal;
+- the task is fully automatable;
+- completing the case creates professional authority or full role competence.
 
-Prefer terms such as `recurring employer demand`, `workflow pattern`, `technical capability`, `automation opportunity`, and `implementation option`.
+Commercial and market claims require separate evidence.
+
+## Legacy public content
+
+Files under `workflows/` and `challenges/`, together with `schemas/workflow-entry.schema.yaml`, were created under the pre-v2.1 employer-evidence-centred model. They are retained for history and may be migrated only through a separate reviewed change.
+
+Do not use a legacy workflow page as the template for a new case.
 
 ## Review and correction
 
-Published entries retain source dates, source classifications, source status, material revisions, and known limitations. Claims should be narrowed or withdrawn when supporting evidence becomes stale, copied, contradicted, inaccessible, or insufficient.
+Before release, inspect the complete package for:
 
-Every page must pass this test:
+- fictional independence;
+- internal consistency across scenario, inputs, task, rubric, and answer;
+- private-information leakage;
+- unsupported authority;
+- output-basis confusion;
+- adjacent-workflow confusion;
+- hidden dependencies;
+- misleading claims;
+- licensing and source-attribution issues.
 
-> After removing all maintainer-owned links, is the page still worth reading, saving, and citing?
-
-The repository prefers a smaller set of defensible workflows and resources over a large set of weakly supported entries.
+Prefer fewer defensible cases over a large collection of shallow exercises. Narrow, hold, revise, or retire a case rather than inventing plausible content.

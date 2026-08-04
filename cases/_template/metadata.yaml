@@ -1,6 +1,6 @@
 id: replace-with-case-id
 title: Replace with case title
-status: draft
+status: proposed
 version: 0.1.0
 last_reviewed: YYYY-MM-DD
 domains:
@@ -11,8 +11,6 @@ difficulty: intermediate
 estimated_time_minutes: 90
 deliverables:
   - replace-with-deliverable
-role_families:
-  - replace-with-role-family
 authority_boundaries:
   - final approval remains with a separately authorized fictional role
   - risk acceptance is outside the learner role

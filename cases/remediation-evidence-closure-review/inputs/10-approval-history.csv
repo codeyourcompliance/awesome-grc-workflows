@@ -1,0 +1,4 @@
+approval_id,object,version,decision,approver,decision_timestamp,scope
+APR-100,Privileged Access Procedure,1.9,approved,Omar Reyes,2026-05-17T09:20:00Z,Procedure publication
+APR-101,Workflow Change CR-7751,4.9.0,approved,Lena Ortiz,2026-05-20T16:10:00Z,Production deployment
+APR-102,Closure Submission CS-247,1.0,reviewed,Maya Chen,2026-06-18T14:00:00Z,Remediation-owner quality check

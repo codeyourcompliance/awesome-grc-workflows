@@ -1,0 +1,9 @@
+artifact_id,file_name,artifact_type,artifact_date,owner,version,hash,claimed_requirement
+EV-01,privileged-access-procedure.md,procedure,2026-05-18,Access Governance,2.0,sha256-a91f,REQ-01
+EV-02,change-record.md,change record,2026-05-20,FleetOps Platform,CR-7751,sha256-b443,REQ-02
+EV-03,post-change-sample-test.md,test workpaper,2026-05-19,Control Operations,TST-247,sha256-c821,REQ-03
+EV-04,monitoring-report.csv,monitoring extract,2026-06-10,Access Governance,1.0,sha256-d009,REQ-05
+EV-05,management-representation.md,management representation,2026-06-18,Remediation Owner,1.0,sha256-e771,REQ-03;REQ-05
+EV-06,approval-history.csv,approval history,2026-05-20,Governance Portal,export-0618,sha256-f660,REQ-01;REQ-02;REQ-06
+EV-07,account-removal-record.md,account record,2026-05-24,Identity Operations,AR-009,sha256-771a,REQ-04
+EV-08,procedure-final-copy.md,procedure,2026-05-18,Access Governance,2.0,sha256-a91f,REQ-01

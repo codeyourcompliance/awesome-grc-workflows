@@ -1,0 +1,7 @@
+requirement_id,expected_evidence,artifact_id,evidence_date,owner_or_source,relevance,completeness,reliability_concern,requirement_coverage,observation,disposition,follow_up_required,traceability_reference
+REQ-01,,,,,,,,,,,,
+REQ-02,,,,,,,,,,,,
+REQ-03,,,,,,,,,,,,
+REQ-04,,,,,,,,,,,,
+REQ-05,,,,,,,,,,,,
+REQ-06,,,,,,,,,,,,

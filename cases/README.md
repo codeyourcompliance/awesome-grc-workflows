@@ -74,6 +74,6 @@ Public `main` should normally contain only `case-ready` or more mature cases.
 
 ## Current cases
 
-No v2.1 public case has been released yet.
+- [Remediation Evidence Closure Review](remediation-evidence-closure-review/README.md) — review a synthetic remediation closure package against six documented requirements and prepare a closure-readiness recommendation. Status: `case-ready`.
 
 Do not add placeholder case directories merely to increase the case count.

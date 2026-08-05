@@ -2,7 +2,7 @@
 
 Runnable synthetic GRC work-sample cases for practising bounded professional actions, producing reviewable deliverables, and learning where evidence, judgment, and authority must remain separate.
 
-> Status: case-library foundation. No v2.1 public case has been released yet.
+> Status: active v2.1 case library with one case-ready public case.
 
 ## What this repository is
 
@@ -98,7 +98,8 @@ A case does not prove:
 ├── LICENSE
 ├── cases/
 │   ├── README.md
-│   └── _template/
+│   ├── _template/
+│   └── remediation-evidence-closure-review/
 ├── schemas/
 │   ├── case-entry.schema.yaml
 │   └── workflow-entry.schema.yaml
@@ -117,7 +118,9 @@ A case does not prove:
 
 ## Current public cases
 
-No v2.1 case is published yet. New cases must use the package structure and review gates described in [cases/README.md](cases/README.md).
+- [Remediation Evidence Closure Review](cases/remediation-evidence-closure-review/README.md) — assess a synthetic issue-closure package against documented closure requirements and prepare a bounded closure-readiness recommendation. Status: `case-ready`.
+
+The earlier foundation statement, “No v2.1 case is published yet,” is superseded by the case above. New cases must use the package structure and review gates described in [cases/README.md](cases/README.md).
 
 ## Legacy content
 

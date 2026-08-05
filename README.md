@@ -120,7 +120,7 @@ A case does not prove:
 
 - [Remediation Evidence Closure Review](cases/remediation-evidence-closure-review/README.md) — assess a synthetic issue-closure package against documented closure requirements and prepare a bounded closure-readiness recommendation. Status: `case-ready`.
 
-The earlier foundation statement, “No v2.1 case is published yet,” is superseded by the case above. New cases must use the package structure and review gates described in [cases/README.md](cases/README.md).
+New cases must use the package structure and review gates described in [cases/README.md](cases/README.md).
 
 ## Legacy content
 

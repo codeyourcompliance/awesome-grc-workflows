@@ -1,0 +1,34 @@
+id: remediation-evidence-closure-review
+title: Remediation Evidence Closure Review
+status: case-ready
+version: 1.0.0
+last_reviewed: 2026-08-05
+domains:
+  - remediation-validation
+  - technology-risk
+bounded_action: Review submitted remediation evidence and issue-closure artifacts against documented closure requirements before issue closure.
+decision_target: Determine whether submitted documentary evidence is sufficient to support a closure-readiness recommendation.
+difficulty: intermediate
+estimated_time_minutes: 120
+required_tools:
+  - spreadsheet editor
+  - document editor
+deliverables:
+  - evidence-to-requirement review workpaper
+  - evidence deficiency register
+  - closure-readiness memo
+role_families:
+  - technology risk
+  - control assurance
+  - issue and remediation ownership
+authority_boundaries:
+  - final issue closure remains with a separately authorized fictional committee
+  - residual-risk acceptance remains with a separately authorized fictional officer
+  - legal or regulatory interpretation is outside the learner role
+  - remediation execution and production changes are outside the learner role
+synthetic_data: true
+private_dependency: false
+maintainer_service_required: false
+public_resources:
+  - https://www.theiia.org/en/content/standards/complete-global-internal-audit-standards/
+pilot_completions: 0

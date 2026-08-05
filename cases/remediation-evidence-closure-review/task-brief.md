@@ -22,6 +22,8 @@ Review the submitted remediation evidence and issue-closure artifacts against th
 - `inputs/10-approval-history.csv`
 - `inputs/11-account-removal-record.md`
 
+The evidence inventory lists EV-01 and EV-08, but the referenced procedure files are not supplied. Treat the inventory metadata as a submitted claim only. Do not infer or reconstruct the contents of those unavailable artifacts.
+
 ## Required tools
 
 - Spreadsheet editor for CSV review and workpaper preparation.
@@ -49,7 +51,7 @@ The submission must separate case facts, assumptions, unsupported or missing inf
 
 - UTC and local timestamps that differ by exactly one hour refer to the same deployment event when all other identifiers match.
 - CSV row order has no evidentiary significance.
-- File names are labels; artifact identity must be established using identifiers, dates, versions, hashes, and content.
+- File names are labels; artifact identity must be established using identifiers, dates, versions, hashes, availability, and content actually supplied.
 
 Each assumption used must be stated. None may replace material evidence.
 
@@ -58,6 +60,7 @@ Each assumption used must be stated. None may replace material evidence.
 The learner must not:
 
 - invent missing evidence, approvals, dates, owners, criteria, or system state;
+- infer the contents of EV-01, EV-08, or any unavailable artifact from inventory metadata alone;
 - assume implementation proves operating effectiveness;
 - treat management representation as independent verification;
 - assume a missing approval is harmless;
@@ -76,7 +79,7 @@ The learner must not:
 ## Included scope
 
 - Evidence inventory and traceability review.
-- Relevance, completeness, freshness, consistency, and reliability checks.
+- Relevance, completeness, freshness, consistency, availability, and reliability checks.
 - Identification and prioritization of deficiencies.
 - Closure-readiness recommendation.
 
@@ -93,13 +96,14 @@ The learner must not:
 
 - Use requirement and artifact identifiers exactly as supplied.
 - Cite input file names and relevant row or section references.
+- Distinguish inventory metadata from artifact content actually reviewed.
 - Reconcile the workpaper, deficiency register, and memo; material conclusions must not conflict.
 - State whether each deficiency is blocking, potentially blocking pending clarification, or non-blocking.
 - End the memo with: `This recommendation is not final issue-closure approval.`
 
 ## Use of AI or automation
 
-AI or automation may assist with read-only extraction, date checks, duplicate detection, traceability, and drafting. The learner remains responsible for verifying facts, calculations, citations, and authority boundaries.
+AI or automation may assist with read-only extraction, date checks, duplicate detection, traceability, and drafting. The learner remains responsible for verifying facts, calculations, citations, evidence availability, and authority boundaries.
 
 ## Completion condition
 

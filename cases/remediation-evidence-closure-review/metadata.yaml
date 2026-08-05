@@ -2,7 +2,7 @@ id: remediation-evidence-closure-review
 title: Remediation Evidence Closure Review
 status: case-ready
 version: 1.0.0
-last_reviewed: 2026-08-05
+last_reviewed: "2026-08-05"
 domains:
   - remediation-validation
   - technology-risk

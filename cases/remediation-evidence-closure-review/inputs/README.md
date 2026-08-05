@@ -8,7 +8,7 @@ These files form the complete evidence package for the case. No hidden evidence 
 | `02-closure-requirements.csv` | Authorized closure criteria |
 | `03-remediation-action-plan.md` | Approved remediation actions |
 | `04-closure-submission.md` | Remediation owner’s closure rationale |
-| `05-evidence-inventory.csv` | Submitted artifact index and metadata |
+| `05-evidence-inventory.csv` | Submitted artifact index, availability, and metadata |
 | `06-change-record.md` | Workflow deployment record |
 | `07-post-change-sample-test.md` | Submitted approval-workflow test |
 | `08-monitoring-report.csv` | Submitted post-change exception monitoring |
@@ -16,4 +16,4 @@ These files form the complete evidence package for the case. No hidden evidence 
 | `10-approval-history.csv` | Procedure and change approvals |
 | `11-account-removal-record.md` | Orphan account removal evidence |
 
-The package intentionally contains ambiguity and defects. Do not assume an omitted artifact exists.
+The inventory lists EV-01 and EV-08, but the referenced procedure files are not supplied in this package. Their metadata may be reviewed as a submitted inventory claim; their contents must not be treated as reviewed evidence. The package intentionally contains ambiguity and defects. Do not assume an omitted artifact exists.

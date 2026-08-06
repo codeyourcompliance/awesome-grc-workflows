@@ -47,21 +47,21 @@ If the actual approved procedure matching the implemented workflow, a complete p
 
 | Requirement or question | Evidence | Observation | Treatment |
 | --- | --- | --- | --- |
-| REQ-01 | EV-01 and EV-08 inventory entries; APR-100 | Procedure files are not supplied; inventory claims version 2.0 while approval history covers version 1.9 | Unsatisfied; request the actual implemented procedure and matching approval or reconciled version history |
+| REQ-01 | EV-01 and EV-08 inventory entries; APR-100 | Procedure files are not supplied; inventory claims version 2.0 while approval history covers version 1.9 | Unsatisfied and blocking; request the actual implemented procedure and matching approval or reconciled version history |
 | REQ-02 | EV-02; APR-101 | Production change, implemented rule, configuration package 4.9.0, and change approval are documented | Documentary evidence is sufficient for implementation, not effectiveness |
 | REQ-03 | EV-03; EV-05 | Test predates deployment, covers 20 of 25, finds two missing approvals, and has identifier conflict | Unsatisfied and blocking; require complete post-deployment rerun |
 | REQ-04 | EV-07 | PA-009 is disabled and removed, with platform-owner verification | Satisfied on supplied documentary evidence |
 | REQ-05 | EV-04; EV-05 | Objective report covers 20 days; management representation claims a longer period without support | Unsatisfied and blocking; request remaining system-generated period |
-| REQ-06 | CS-247; APR-102 | Rationale exists, but only the remediation owner’s quality check is recorded | Unsatisfied; request Issue Owner review |
+| REQ-06 | CS-247; APR-102 | Rationale exists, but only the remediation owner’s quality check is recorded | Unsatisfied and blocking; request Issue Owner review |
 | Duplicate inventory claim | EV-01; EV-08 | Same claimed hash, but neither file is supplied | Do not count as independent support; request the actual artifact and correct the inventory |
 | Deployment timestamp | EV-02; scenario | UTC/local difference is expected | Not a finding |
 
 ## Material findings
 
-1. **REQ-03 is not satisfied.** The test is not demonstrably post-deployment, does not cover the full population, contains two exceptions, and references the wrong issue identifier.
-2. **REQ-05 is not satisfied.** The monitoring report covers 20 rather than 30 consecutive days.
-3. **REQ-01 is not satisfied.** The required procedure artifact is unavailable, and the inventory’s claimed version 2.0 does not match the approved version 1.9.
-4. **REQ-06 is not satisfied.** No Issue Owner review of the closure rationale is recorded.
+1. **REQ-03 is an unsatisfied blocking requirement.** The test is not demonstrably post-deployment, does not cover the full population, contains two exceptions, and references the wrong issue identifier.
+2. **REQ-05 is an unsatisfied blocking requirement.** The monitoring report covers 20 rather than 30 consecutive days.
+3. **REQ-01 is an unsatisfied blocking requirement.** The required procedure artifact is unavailable, and the inventory’s claimed version 2.0 does not match the approved version 1.9.
+4. **REQ-06 is an unsatisfied blocking requirement.** No Issue Owner review of the closure rationale is recorded.
 5. **The tester-independence criterion is unresolved.** Clarification is needed, but other REQ-03 defects already prevent reliance on the test.
 6. **The inventory contains duplicate, unavailable procedure references.** EV-01 and EV-08 do not provide reviewed corroboration.
 
@@ -71,7 +71,7 @@ The one-hour timestamp difference is not a contradiction. The deployment timesta
 
 ## Preferred answer
 
-**Not ready for authorized closure consideration.** Four documented closure requirements remain unsupported, including two clear blocking evidence requirements. The package should be returned for targeted evidence and correction. The conclusion is about documentary sufficiency only and does not determine whether the remediation is effective.
+**Not ready for authorized closure consideration.** Four documented blocking requirements remain unsupported: REQ-01, REQ-03, REQ-05, and REQ-06. The package should be returned for targeted evidence and correction. The conclusion is about documentary sufficiency only and does not determine whether the remediation is effective.
 
 ## Acceptable alternatives
 

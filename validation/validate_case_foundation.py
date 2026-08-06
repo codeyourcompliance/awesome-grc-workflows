@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v2.1 public case-library foundation."""
+"""Validate the v2.1 public case-library foundation and active case index."""
 from __future__ import annotations
 
 import argparse
@@ -65,6 +65,13 @@ OBSOLETE_ROLE_RELATIONSHIPS = [
     "`authorize/own`",
 ]
 
+ACTIVE_PUBLIC_STATUSES = {"case-ready", "pilot-tested", "validated-case"}
+STALE_EMPTY_LIBRARY_MARKERS = (
+    "No v2.1 case is published yet",
+    "No v2.1 public case has been released yet",
+    "No v2.1 case has been released yet",
+)
+
 
 def extract_section(text: str, heading: str) -> str:
     marker = f"## {heading}"
@@ -72,6 +79,11 @@ def extract_section(text: str, heading: str) -> str:
         return ""
     remainder = text.split(marker, 1)[1]
     return remainder.split("\n## ", 1)[0]
+
+
+def metadata_field(text: str, field: str) -> str | None:
+    match = re.search(rf"^{re.escape(field)}:\s*(.+?)\s*$", text, re.M)
+    return match.group(1) if match else None
 
 
 def main() -> int:
@@ -99,7 +111,8 @@ def main() -> int:
         "README.md": [
             "Runnable synthetic GRC work-sample cases",
             "`cases/` is the active public product surface",
-            "No v2.1 case is published yet",
+            "Status: active v2.1 case library",
+            "## Current public cases",
             "## Private-to-public gate",
             "explicit transfer approval",
             "required tools",
@@ -150,6 +163,7 @@ def main() -> int:
             "Role relevance is optional",
             "`design-ready`",
             "`validated-case`",
+            "## Current cases",
         ],
         "workflows/README.md": ["Legacy Workflows", "Do not add new workflow entries here"],
         "workflows/_template.md": ["Do Not Use", "cases/_template/"],
@@ -316,14 +330,53 @@ def main() -> int:
                     f"{relative}: private-layer or recruitment marker matched {pattern}"
                 )
 
+    root_readme = docs["README.md"]
+    cases_readme = docs["cases/README.md"]
+    for stale in STALE_EMPTY_LIBRARY_MARKERS:
+        if stale in root_readme:
+            errors.append(f"README.md: stale empty-library marker {stale!r}")
+        if stale in cases_readme:
+            errors.append(f"cases/README.md: stale empty-library marker {stale!r}")
+
     cases_root = root / "cases"
-    public_case_count = 0
+    public_case_dirs = []
     if cases_root.is_dir():
-        public_case_count = sum(
-            1
+        public_case_dirs = sorted(
+            path
             for path in cases_root.iterdir()
             if path.is_dir() and not path.name.startswith("_")
         )
+    public_case_count = len(public_case_dirs)
+    if public_case_count < 1:
+        errors.append("active case library must contain at least one public case")
+
+    for case_dir in public_case_dirs:
+        metadata_path = case_dir / "metadata.yaml"
+        readme_path = case_dir / "README.md"
+        if not metadata_path.is_file():
+            errors.append(f"{case_dir.relative_to(root)}: missing metadata.yaml")
+            continue
+        if not readme_path.is_file():
+            errors.append(f"{case_dir.relative_to(root)}: missing README.md")
+        case_metadata = metadata_path.read_text(encoding="utf-8")
+        case_id = metadata_field(case_metadata, "id")
+        case_title = metadata_field(case_metadata, "title")
+        case_status = metadata_field(case_metadata, "status")
+        if case_id != case_dir.name:
+            errors.append(
+                f"{metadata_path.relative_to(root)}: id {case_id!r} does not match directory {case_dir.name!r}"
+            )
+        if case_status not in ACTIVE_PUBLIC_STATUSES:
+            errors.append(
+                f"{metadata_path.relative_to(root)}: active public case status {case_status!r} is not allowed"
+            )
+        if not case_title:
+            errors.append(f"{metadata_path.relative_to(root)}: missing title")
+        else:
+            if case_title not in root_readme:
+                errors.append(f"README.md: active case title missing from index: {case_title!r}")
+            if case_title not in cases_readme:
+                errors.append(f"cases/README.md: active case title missing from index: {case_title!r}")
 
     if errors:
         print("CASE_FOUNDATION_VALIDATION=FAIL")
@@ -347,6 +400,8 @@ def main() -> int:
     print("REQUIRED_TOOLS_FIELD=required")
     print("CASE_READY_PUBLIC_RESOURCE_MINIMUM=1")
     print("ACTIVE_PUBLIC_SURFACE=cases")
+    print("ACTIVE_CASE_INDEX_CONSISTENCY=PASS")
+    print("STALE_EMPTY_LIBRARY_MARKERS=0")
     print("LEGACY_WORKFLOW_DIRECTORY=retained")
     print("LEGACY_CHALLENGE_DIRECTORY=retained")
     print("LEGACY_PAGE_BANNER=PASS")

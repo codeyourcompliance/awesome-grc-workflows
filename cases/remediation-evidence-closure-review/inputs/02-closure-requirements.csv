@@ -1,0 +1,7 @@
+requirement_id,requirement,minimum_evidence,materiality,criterion_owner
+REQ-01,Revised privileged-access procedure approved and effective before closure,Approved procedure version matching the implemented workflow,blocking,Issue Owner
+REQ-02,Workflow prevents fulfillment until manager and application-owner approvals are recorded,Production change record plus configuration evidence,blocking,FleetOps Platform Owner
+REQ-03,All 25 requests in the defined review population have both approvals and were tested after deployment,Post-deployment test covering 25 of 25 requests with traceable results,blocking,Issue Owner
+REQ-04,Orphan privileged account PA-009 is disabled and removed from active group membership,Account-removal record and current membership evidence,blocking,FleetOps Platform Owner
+REQ-05,At least 30 consecutive days of monitoring show no approval-bypass exception,Monitoring report covering 30 complete days after deployment,blocking,Issue Owner
+REQ-06,Closure rationale reconciles all requirements and is reviewed by the issue owner,Closure rationale plus issue-owner review record,blocking,Issue Owner

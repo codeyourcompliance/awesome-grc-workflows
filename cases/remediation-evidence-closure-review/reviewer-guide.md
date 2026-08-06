@@ -59,7 +59,8 @@ A strong submission reserves final closure for the Issue Closure Committee, risk
 - Inventing an approval, unavailable procedure content, report, test rerun, or missing monitoring period.
 - Treating inventory metadata as if the underlying artifact was reviewed.
 - Treating missing evidence as satisfactory evidence.
-- Missing REQ-03 or REQ-05.
+- Failing to address any documented closure requirement.
+- Missing or treating as non-blocking any unsatisfied documented blocking requirement, including REQ-01, REQ-03, REQ-05, or REQ-06 in this package.
 - Claiming that deployment or management representation proves effectiveness.
 - Approving closure, accepting risk, or making a legal determination.
 - Changing the closure requirements.
@@ -80,9 +81,8 @@ A strong submission reserves final closure for the Issue Closure Committee, risk
 A passing submission must:
 
 - address all six requirements;
-- identify the REQ-03 and REQ-05 blockers;
+- identify all unsatisfied blocking requirements in the supplied package: REQ-01, REQ-03, REQ-05, and REQ-06;
 - identify that the procedure files are unavailable and that the claimed 2.0 version conflicts with the approved 1.9 version;
-- identify the REQ-06 review gap;
 - avoid the timezone false positive;
 - distinguish duplicate inventory claims from independent evidence;
 - request specific additional evidence;
@@ -91,7 +91,7 @@ A passing submission must:
 
 ## Partial credit
 
-Correct findings with weak citations receive partial credit. A complete workpaper with an underdeveloped memo may pass if the final recommendation remains supportable. Missing a blocking finding cannot be cured by polished writing. Authority overreach triggers the critical-error treatment.
+Correct findings with weak citations receive partial credit. A complete workpaper with an underdeveloped memo may pass if the final recommendation remains supportable. Missing or misclassifying any documented blocking requirement caps the score below passing and cannot be cured by polished writing. Authority overreach triggers the critical-error treatment.
 
 ## Feedback prompts
 

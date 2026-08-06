@@ -50,6 +50,8 @@ EXPECTED_SUPPLIED = {
     "EV-07": "inputs/11-account-removal-record.md",
 }
 EXPECTED_UNAVAILABLE = {"EV-01", "EV-08"}
+EXPECTED_BLOCKING_REQUIREMENTS = {f"REQ-0{i}" for i in range(1, 7)}
+EXPECTED_UNSATISFIED_BLOCKING = {"REQ-01", "REQ-03", "REQ-05", "REQ-06"}
 
 
 def main() -> int:
@@ -106,6 +108,7 @@ def main() -> int:
             "## Critical errors",
             "Authority-boundary discipline",
             "contents of an unavailable artifact",
+            "Missing or misclassifying any documented blocking requirement caps the score at 59.",
         ],
         "reviewer-guide.md": [
             "## Mandatory observations",
@@ -118,6 +121,7 @@ def main() -> int:
             "## Minimum passing evidence",
             "## Partial credit",
             "Treating inventory metadata",
+            "Missing or treating as non-blocking any unsatisfied documented blocking requirement",
         ],
         "reference-answer.md": [
             "one defensible response",
@@ -128,6 +132,7 @@ def main() -> int:
             "## Evidence needed to resolve uncertainty",
             "## Decisions reserved for authorized roles",
             "neither procedure file is supplied",
+            "Four documented blocking requirements remain unsupported",
         ],
         "metadata.yaml": [
             f"id: {CASE_ID}",
@@ -164,6 +169,34 @@ def main() -> int:
         errors.append("requirements: expected REQ-01 through REQ-06")
     if any(r.get("materiality") != "blocking" for r in requirements):
         errors.append("requirements: all supplied requirements should be blocking")
+    blocking_requirements = {
+        r.get("requirement_id", "")
+        for r in requirements
+        if r.get("materiality") == "blocking"
+    }
+    if blocking_requirements != EXPECTED_BLOCKING_REQUIREMENTS:
+        errors.append(
+            "requirements: blocking materiality set does not match REQ-01 through REQ-06"
+        )
+
+    scoring = docs.get("scoring-rubric.md", "")
+    reviewer = docs.get("reviewer-guide.md", "")
+    reference = docs.get("reference-answer.md", "")
+    if "caps the score at 74" in scoring:
+        errors.append("scoring rubric: blocking requirement may not retain a passing-score cap")
+    for req in sorted(EXPECTED_UNSATISFIED_BLOCKING):
+        if req not in scoring:
+            errors.append(f"scoring rubric: missing unsatisfied blocking requirement {req}")
+        if req not in reviewer:
+            errors.append(f"reviewer guide: missing unsatisfied blocking requirement {req}")
+        if not re.search(
+            rf"^\| {re.escape(req)} \|.*\| Unsatisfied and blocking;",
+            reference,
+            re.M,
+        ):
+            errors.append(
+                f"reference answer: {req} is not explicitly treated as unsatisfied and blocking"
+            )
 
     inventory = rows("inputs/05-evidence-inventory.csv")
     if len(inventory) != 8:
@@ -208,7 +241,6 @@ def main() -> int:
     ):
         errors.append("approval history: designed procedure-version mismatch missing")
 
-    reference = docs.get("reference-answer.md", "")
     for req in [f"REQ-0{i}" for i in range(1, 7)]:
         if req not in reference:
             errors.append(f"reference answer: missing {req}")
@@ -255,6 +287,7 @@ def main() -> int:
     print("PUBLIC_RESOURCE_MINIMUM=PASS")
     print("AUTHORITY_BOUNDARY=PASS")
     print("EVIDENCE_AVAILABILITY_BOUNDARY=PASS")
+    print("MATERIALITY_TO_SCORING_CONSISTENCY=PASS")
     return 0
 
 

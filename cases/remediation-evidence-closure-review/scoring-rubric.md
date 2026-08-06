@@ -32,6 +32,7 @@ A reviewer must fail or cap a submission that:
 - treats inventory metadata as proof that the referenced procedure was reviewed;
 - treats deployment as proof of remediation effectiveness;
 - grants final closure approval or accepts residual risk;
+- misses or treats as non-blocking any unsatisfied documented blocking requirement;
 - ignores the pre-deployment test or the incomplete 25-request population;
 - treats the 20-day monitoring report as satisfying a 30-day requirement;
 - treats EV-08 as independent corroboration despite the identical claimed hash and unavailable files;
@@ -42,7 +43,8 @@ A reviewer must fail or cap a submission that:
 
 ## Case-specific scoring notes
 
-- Missing REQ-03 or REQ-05 is a blocking error and caps the score at 59.
-- Missing the unavailable procedure evidence and version conflict, or missing the REQ-06 issue-owner review gap, caps the score at 74.
+- Missing or misclassifying any documented blocking requirement caps the score at 59.
+- In the supplied package, REQ-01, REQ-03, REQ-05, and REQ-06 are unsatisfied blocking requirements; missing any one of them prevents a passing score.
+- Missing a supporting observation that does not independently determine requirement satisfaction, such as the duplicate claimed hash, identifier conflict, or unresolved tester-independence criterion, loses relevant dimension credit but does not override the blocking-requirement rule.
 - Treating the timezone difference as a material contradiction loses false-positive-control credit but is not an automatic failure.
 - A concise `not ready` recommendation and a carefully framed `unable to conclude and return for evidence` recommendation may both score well when they identify all blockers and remain within authority.
